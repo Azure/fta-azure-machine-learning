@@ -1,4 +1,4 @@
-# FastTrack for Azure - AzureML Live events
+# FastTrack for Azure - Azure Machine Learning (AzureML) Live events
 
 This repo contains the material used for the [FTA AzureML Live](https://aka.ms/ftaLive) events.
 
@@ -10,7 +10,7 @@ The calls will not be recorded due to the wide audience and to encourage questio
 
 **Questions during the call?**: Feel free to type them in the chat window at any time. Note that questions you post will be public.
 
-**Slideless session**: No PowerPoint, we promise! As we [update this repository](https://aka.ms/ftaLive/azureML) you will get the changes straight away.
+**Slideless session**: No PowerPoint, we promise! As we update [this repository](https://aka.ms/ftaLive/azureML) you will get the changes straight away.
 
 Please give us your feedback through the [feedback form](https://aka.ms/ftaLive-feedback).
 

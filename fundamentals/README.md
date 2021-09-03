@@ -1,6 +1,7 @@
 # Azure Machine Learning fundamentals Live event
 
 In this session you will get an understanding of the overall [Azure Machine Learning (AzureML)](https://docs.microsoft.com/azure/machine-learning/overview-what-is-azure-machine-learning) components and how you can start using the [AzureML studio](https://docs.microsoft.com/azure/machine-learning/overview-what-is-machine-learning-studio) web portal to accelerate you AI journey in the cloud.
+The content of this session is available in our [github repository](https://aka.ms/ftalive/azureml/fundamentals).
 
 ## Agenda
 
