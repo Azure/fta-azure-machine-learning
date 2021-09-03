@@ -9,7 +9,7 @@ Use the following links to deploy the required resources in your Azure subscript
 
 > **Note**: If you have deleted a KeyVault with the same name recently, you will need to use `recover` create mode. See here how [purge protection](https://docs.microsoft.com/azure/key-vault/general/soft-delete-overview#purge-protection) works.
 
-> **Note**: If you see an error regarding the shutdown schedule of the compute instance, you will need to shut down or delete the existing compute instance to re-deploy the template.
+> **Note**: If you see an error regarding the shutdown schedule of the compute instance, you will need to delete the existing compute instance to re-deploy the template.
 
 ## References
 
