@@ -25,7 +25,9 @@
         },
         "tags": {
             "type": "object",
-            "defaultValue": "[resourceGroup().tags]"
+            "defaultValue": {
+                "Environment": "Demo"
+            }
         },
         "keyVaultCreateMode": {
             "type": "string",
