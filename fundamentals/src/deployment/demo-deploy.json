@@ -152,7 +152,7 @@
                 "keyVault": "[variables('keyVault')]",
                 "applicationInsights": "[variables('applicationInsights')]",
                 "containerRegistry": "[variables('containerRegistry')]",
-                "systemDatastoresAuthMode": "identity"
+                "systemDatastoresAuthMode": "accessKey"
             }
         },
         {
