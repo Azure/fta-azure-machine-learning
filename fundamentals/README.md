@@ -18,7 +18,7 @@ The content of this session is available in our [github repository](https://aka.
 | 09. |  | Model explanation | Get insights on how the trained model works
 | 10. | Model deployment | Deploy to ACI | Deploy a real time inference endpoint into Azure Container Instance
 | 11. | | Model registry | Review artifacts stored
-| 12. | | Real time endpoints | Review and test the ACI endpoint
+| 12. | | Real time endpoints | Review and [test](https://reqbin.com/etrbvco6) the ACI endpoint
 | 13. | | Batch endpoints | How to run a batch inference process
 | 14. | Notebooks | Folder structure | Review where notebooks are saved
 | 15. |  | Terminal | Work with terminal and git
