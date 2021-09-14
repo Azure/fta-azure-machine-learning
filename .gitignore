@@ -348,3 +348,12 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+
+# AzureML and MLflow artifacts
+.config
+logs
+outputs
+mlruns
+*.amltemp
+*.amltmp
+.ipynb_aml_checkpoints/
