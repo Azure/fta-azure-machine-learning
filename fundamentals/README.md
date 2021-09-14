@@ -18,13 +18,14 @@ The content of this session is available in our [github repository](https://aka.
 | 09. |  | Model explanation | Get insights on how the trained model works
 | 10. | Model deployment | Deploy to ACI | Deploy a real time inference endpoint into Azure Container Instance
 | 11. | | Model registry | Review artifacts stored
-| 12. | | Real time endpoints | Review and [test](https://reqbin.com/etrbvco6) the ACI endpoint
-| 13. | | Batch endpoints | How to run a batch inference process
-| 14. | Notebooks | Folder structure | Review where notebooks are saved
-| 15. |  | Terminal | Work with terminal and git
-| 16. |  | Samples | Get a sample notebook to get started
-| 17. | AzureML SDK | Working with resources | Manipulate your AzureML workspace with python code
+| 12. | | Real time endpoints | [Review swagger.json](https://jsonformatter.org/) and [test](https://reqbin.com/etrbvco6) the ACI endpoint
+| 13. | Notebooks | Folder structure | Review where notebooks are saved
+| 14. |  | Terminal | Work with terminal and git
+| 15. |  | Samples | Get a sample notebook to get started
+| 16. | AzureML SDK | Working with resources | Manipulate your AzureML workspace with python code
+| 17. |  | Logging metrics | Explore AzureML SDK and mlflow
 | 18. |  | Submit script | Execute code on a remote cluster
 | 19. |  | Environments | Add code dependencies in the executing context
 | 20. |  | Author pipeline | Orchestrate multiple steps in a pipeline
 | 21. |  | Review pipeline endpoints | Explore the published pipeline and how to invoke via REST
+| 22. |  | Parallel batch processing | Batch inference pipelines
