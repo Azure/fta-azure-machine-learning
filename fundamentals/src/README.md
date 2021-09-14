@@ -11,6 +11,8 @@ Use the following links to deploy the required resources in your Azure subscript
 
 > **Note**: If you see an error regarding the shutdown schedule of the compute instance, you will need to delete the existing compute instance to re-deploy the template.
 
+> If you already have tags in your resource group and you want to propagate them to your resources, you can use `[resourceGroup().tags]` in the **Tags** parameter.
+
 ## References
 
 Various resources used while curating the demos:
