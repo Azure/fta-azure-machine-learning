@@ -13,6 +13,10 @@ Use the following links to deploy the required resources in your Azure subscript
 
 > If you already have tags in your resource group and you want to propagate them to your resources, you can use `[resourceGroup().tags]` in the **Resource Tags** parameter.
 
+## Notebooks
+
+The notebooks folder contain a couple of fundamental jupyter notebooks to demo various aspects of the AzureML SDK. It takes approximately 40 minutes to run all the notebooks.
+
 ## References
 
 Various resources used while curating the demos:

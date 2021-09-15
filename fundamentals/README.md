@@ -23,9 +23,18 @@ The content of this session is available in our [github repository](https://aka.
 | 14. |  | Terminal | Work with terminal and git
 | 15. |  | Samples | Get a sample notebook to get started
 | 16. | AzureML SDK | Working with resources | Manipulate your AzureML workspace with python code
-| 17. |  | Logging metrics | Explore AzureML SDK and mlflow
+| 17. |  | Logging metrics | Explore AzureML SDK and MLflow
 | 18. |  | Submit script | Execute code on a remote cluster
 | 19. |  | Environments | Add code dependencies in the executing context
 | 20. |  | Author pipeline | Orchestrate multiple steps in a pipeline
 | 21. |  | Review pipeline endpoints | Explore the published pipeline and how to invoke via REST
 | 22. |  | Parallel batch processing | Batch inference pipelines
+
+## Additional samples
+
+A list of curated AzureML samples:
+
+- [Fun with AzureML repo](https://github.com/rndazurescript/FunWithAzureML)
+- [Many models solution accelerator](https://github.com/microsoft/solution-accelerator-many-models)
+- [Official AzureML notebook samples](https://github.com/Azure/MachineLearningNotebooks/)
+- [MLOps starter](https://aka.ms/mlops)

@@ -33,7 +33,7 @@ contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additio
 
 ### Linting you code contributions
 
-Please make sure that your code and notebooks comply with flake8 and that the code blockes are formated with [black](https://github.com/psf/black).
+Please make sure that your code and notebooks comply with flake8 and that the code blocks are formatted with [black](https://github.com/psf/black).
 
 In your terminal install the prerequisites:
 
@@ -42,6 +42,7 @@ pip install black[jupyter] flake8 flake8_nb
 ```
 
 To format and verify your code:
+
 ``` bash
 black .
 flake8 .
