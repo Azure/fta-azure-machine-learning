@@ -6,3 +6,5 @@
 *.amltemp
 outputs
 mlruns
+.config
+.amlignore

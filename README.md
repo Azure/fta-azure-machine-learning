@@ -31,6 +31,23 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
 For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
 contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
+### Linting you code contributions
+
+Please make sure that your code and notebooks comply with flake8 and that the code blockes are formated with [black](https://github.com/psf/black).
+
+In your terminal install the prerequisites:
+
+``` bash
+pip install black[jupyter] flake8 flake8_nb
+```
+
+To format and verify your code:
+``` bash
+black .
+flake8 .
+flake8_nb .
+```
+
 ## Trademarks
 
 This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft trademarks or logos is subject to and must follow [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).
