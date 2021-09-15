@@ -53,7 +53,7 @@
         "workspaceName": "[concat(parameters('resourcePrefix'),'azureml')]",
         "computeInstanceName": "[concat(parameters('resourcePrefix'),'ci', parameters('resourceSuffix'))]",
         "computeInstanceSize": "Standard_DS3_v2",
-        "cloneCommand": "cd /home/azureuser/cloudfiles/code && rm -rf fta-live && git clone https://github.com/Azure/fta-azure-machine-learning fta-live",
+        "cloneCommand": "cd /home/azureuser/cloudfiles/code && rm -rf fta-live && git clone --depth 1 --branch main https://github.com/Azure/fta-azure-machine-learning fta-live",
         "clusterName": "cpu-cluster",
         "clusterSize": "Standard_DS12_v2",
         "storageAccountName": "[concat(parameters('resourcePrefix'),'stg', parameters('resourceSuffix'))]",
