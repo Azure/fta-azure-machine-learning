@@ -27,7 +27,7 @@ print(f"Loading data from {args.input_path}")
 train_data = lgb.Dataset(os.path.join(args.input_path, "train_dataset.bin"))
 validation_data = lgb.Dataset(os.path.join(args.input_path, "validation_dataset.bin"))
 
-metric = "l2"
+metric = "rmse"
 validation_set_name = (
     "test_dataset"  # The name that will appear in the evaluation results
 )
