@@ -25,7 +25,7 @@
 - While showing the profile of the **diabetes-tabular** dataset, show the **box and whisker plot** where you can see some outliers above 0.1, something that you will use later in the model interpretation to form a cohort.
 
   ![Outliers in dataset profile](images/show_feature_2_outlier_more_than_0.1.png)
-- In AutoML create a cohort named **Feature 2 more than 0.1** (or just **F2G0.1**) to show how in that cohort, the most important feature is the feature named **2**.
+- In AutoML run, in the best model's **Explanations** tab, create a cohort named **Feature 2 more than 0.1** (or just **F2G0.1**) to show how in that cohort, the most important feature is the feature named **2**.
 
   ![Creating the cohort](images/explainer_cohort.jpg)
 - After creating the cohort, go to the **Individual feature importance** and show how in that cohort, all records have **Predicted Y** value above 220 (show audience that axis of that graph can change).
