@@ -7,6 +7,7 @@ The content of this session is available in our [github repository](https://aka.
 
 |     | Topic  | Feature | Description  
 | :-- | :----- | :-----  | :-----
+| 00. | Intro  |     | Introduction to the presenters and the overall session
 | 01. | Resources in [Azure portal](http://portal.azure.com/) | | A lap around the resources deployed with AzureML
 | 02. | [AzureML studio](https://ml.azure.com/) | Overview | Guide around the studio user interface
 | 03. |  | Compute | Go through the various workspace compute options
@@ -18,17 +19,18 @@ The content of this session is available in our [github repository](https://aka.
 | 09. |  | Model explanation | Get insights on how the trained model works
 | 10. | Model deployment | Deploy to ACI | Deploy a real time inference endpoint into Azure Container Instance
 | 11. | | Model registry | Review artifacts stored
-| 12. | | Real time endpoints | [Review swagger.json](https://jsonformatter.org/) and [test](https://reqbin.com/etrbvco6) the ACI endpoint
+| 12. | | Real time endpoints | Review swagger.json and [test](https://reqbin.com/etrbvco6) the ACI endpoint
 | 13. | Notebooks | Folder structure | Review where notebooks are saved
 | 14. |  | Terminal | Work with terminal and git
 | 15. |  | Samples | Get a sample notebook to get started
-| 16. | AzureML SDK | Working with resources | Manipulate your AzureML workspace with python code
-| 17. |  | Logging metrics | Explore AzureML SDK and MLflow
-| 18. |  | Submit script | Execute code on a remote cluster
-| 19. |  | Environments | Add code dependencies in the executing context
-| 20. |  | Author pipeline | Orchestrate multiple steps in a pipeline
-| 21. |  | Review pipeline endpoints | Explore the published pipeline and how to invoke via REST
-| 22. |  | Parallel batch processing | Batch inference pipelines
+| 16. |  | IntelliSense | Show coding productivity boosters within Notebooks
+| 17. | AzureML SDK | Working with resources | Manipulate your AzureML workspace with python code
+| 18. |  | Logging metrics | Explore AzureML SDK and MLflow
+| 19. |  | Submit script | Execute code on a remote cluster
+| 20. |  | Environments | Add code dependencies in the executing context
+| 21. |  | Author pipeline | Orchestrate multiple steps in a pipeline
+| 22. |  | Review pipeline endpoints | Explore the published pipeline and how to invoke via REST
+| 23. |  | Parallel batch processing | Batch inference pipelines
 
 ## Additional samples
 
@@ -38,3 +40,16 @@ A list of curated AzureML samples:
 - [Many models solution accelerator](https://github.com/microsoft/solution-accelerator-many-models)
 - [Official AzureML notebook samples](https://github.com/Azure/MachineLearningNotebooks/)
 - [MLOps starter](https://aka.ms/mlops)
+
+## Frequently asked questions
+
+Here is a list of great questions that came up during the live sessions:
+
+- **What is the difference between a compute cluster and an inference cluster?** You can use Azure Machine Learning [compute cluster](https://docs.microsoft.com/azure/machine-learning/how-to-create-attach-compute-cluster?tabs=python) to distribute a training or batch inference process across a cluster of CPU or GPU compute nodes in the cloud. An [inference cluster](https://docs.microsoft.com/azure/machine-learning/how-to-create-attach-kubernetes?tabs=python) refers to an [Azure Kubernetes Service](https://azure.microsoft.com/services/kubernetes-service/) where Azure Machine Learning can deploy trained machine learning models as real time endpoints.
+- **How do I prepare the compute instance to already have a list of selected python packages?** You can use a script while deploying the compute instance as seen in the [official Microsoft documentation](https://docs.microsoft.com/azure/machine-learning/how-to-create-manage-compute-instance?tabs=python#use-script-in-a-resource-manager-template)
+- **Can AzureML assist me in distributed training?** Yes, the compute clusters of AzureML can support both data and model parallelism. Start from [this documentation](https://docs.microsoft.com/azure/machine-learning/concept-distributed-training) and then reach out to your [FastTrack for Azure](https://azure.microsoft.com/programs/azure-fasttrack/) Engineer owner or PM to get more technical support.
+- **How do I ensure that my blob store doesn't get filled with random data overtime?** You can use [Azure Blob Storage lifecycle management](https://docs.microsoft.com/azure/storage/blobs/lifecycle-management-overview) as described in [this AzureML cost optimization article](https://docs.microsoft.com/azure/machine-learning/how-to-manage-optimize-cost#set-data-retention--deletion-policies)
+- **Can one restrict access to the functionalities of the workspace?** Yes, AzureML integrates with Azure's Role Based Access Control (RBAC) model allowing you to fine tune access as seen in [this article](https://docs.microsoft.com/azure/machine-learning/how-to-assign-roles).
+- **Why does AutoML show 100% sampling in the best model summary?** Sampling is automatically enabled by AutoML to [handle imbalanced data](https://docs.microsoft.com/azure/machine-learning/concept-manage-ml-pitfalls#handle-imbalanced-data) when needed. In our example, all data were used.
+- **What are the best practices to version my data, since the dataset only keeps a reference to my actual files?** Have a look on [this article for guidance regarding data versioning](https://docs.microsoft.com/azure/machine-learning/how-to-version-track-datasets).
+- **Is there a way to assign a cluster to specific users or user group?** Clusters "belong" to the workspace and all users that have access to the workspace can utilize the clusters. Normally the security boundary of a workspace is around the ML project where all team members have access to the same data and compute resources. Not to be confused with Compute Instances who are dedicated to each member (as they may contain [ssh keys to access remote git repositories](https://docs.microsoft.com/azure/machine-learning/concept-train-model-git-integration)) and one can [create a compute instance of behalf of another user](https://docs.microsoft.com/azure/machine-learning/how-to-create-manage-compute-instance?tabs=python#on-behalf).
