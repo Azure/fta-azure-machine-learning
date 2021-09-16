@@ -1,6 +1,6 @@
-# Presenter notes for AzureML fundamentals
+# Presenter's notes for AzureML fundamentals
 
-## Preparation checklist
+## Demo environment setup
 
 - Deploy workspace using the instructions in [the src folder](./src/README.md)
 - Navigate to **Author** | **Notebooks**. Run all notebooks located in the **fta-live** | **fundamentals** | **src** | **notebooks** folder in the **Files** tree.
@@ -16,8 +16,16 @@
 - Open an Azure portal, navigate to the resource group and filter out the **container instances** to be able to show only the 5 AzureML deployed resources.
 - Navigate to the **deploy-to-aci** endpoint:
   - Open the **Swagger URI**. Copy paste it in a [json formatter](https://www.jsonformatter.io/)
-  - Copy the **REST endpoint** and past it in the [reqbin sample](https://reqbin.com/etrbvco6). Select the **Content (27)** tab to have the sample request ready to send. If you want to try it, you can then remove one of the two records during the live event.
-- Dismiss all notifications in the AzureML studio
+  - Copy the **REST endpoint** and paste it in the [reqbin sample](https://reqbin.com/etrbvco6). Select the **Content (27)** tab to have the sample request ready to send. If you want to try it, you can then remove one of the two records during the live event.
+- Dismiss all notifications in the AzureML studio.
+
+## During the live event
+
+- While showing the profile of the **diabetes-tabular** dataset, show the **box and whisker plot** where you can see some outliers above 0.1, something that you will use later in the model interpretation to form a cohort.
+  ![Outliers in dataset profile](images/show_feature_2_outlier_more_than_0.1.png)
+- In AutoML create a cohort named **Feature2GreaterThan0.1** (or just **f2g0.1**) to show how in that cohort, the most important feature is the feature named **2**. You then can go to the **Individual feature importance** and show how in that cohort, all records have **Predicted Y** value above 220 (show audience that axis of that graph can change).
+  ![Cohort individual records](images/show_feature_2_individual_records.png)
+- Ask for [feedback](https://aka.ms/ftaLive-feedback).
 
 ## After the live event
 
