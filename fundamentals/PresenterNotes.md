@@ -24,7 +24,9 @@
 - Tell audience that you will be training models against the [scikit learn diabetes dataset](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_diabetes.html). The dataset contains features like blood pressure and glucose concentration of 442 diabetes patients which are normalized and stored into 10 features named 0 to 9. The target column of the dataset is a numeric value representing a quantitative measure of the disease progression, one year after the features where measured.
 - While showing the profile of the **diabetes-tabular** dataset, show the **box and whisker plot** where you can see some outliers above 0.1, something that you will use later in the model interpretation to form a cohort.
   ![Outliers in dataset profile](images/show_feature_2_outlier_more_than_0.1.png)
-- In AutoML create a cohort named **Feature2GreaterThan0.1** (or just **f2g0.1**) to show how in that cohort, the most important feature is the feature named **2**. You then can go to the **Individual feature importance** and show how in that cohort, all records have **Predicted Y** value above 220 (show audience that axis of that graph can change).
+- In AutoML create a cohort named **Feature 2 more than 0.1** (or just **F2G0.1**) to show how in that cohort, the most important feature is the feature named **2**.
+  ![Creating the cohort](images/explainer_cohort.jpg)
+- After creating the cohort, go to the **Individual feature importance** and show how in that cohort, all records have **Predicted Y** value above 220 (show audience that axis of that graph can change).
   ![Cohort individual records](images/show_feature_2_individual_records.png)
 - Ask for [feedback](https://aka.ms/ftaLive-feedback).
 
