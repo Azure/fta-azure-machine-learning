@@ -4,7 +4,7 @@
 
 - Deploy workspace using the instructions in [the src folder](./src/README.md)
 - Navigate to **Author** | **Notebooks**. Run all notebooks located in the **fta-live** | **fundamentals** | **src** | **notebooks** folder in the **Files** tree.
-- Configure and run a regression autoML experiment on top of the **diabetes-tabular** that got registered. You can create a new experiment named **diabetes-automl-experiment**. Target column is **target** and you can use the **cpu-cluster** cluster that is available. In the **View additional configuration settings** specify 0.5 in the **Exit criterion* | **Training job time (hours)**.
+- Configure and run a regression autoML experiment on top of the **diabetes-tabular** that got registered. You can create a new experiment named **diabetes-automl-experiment**. Target column is **target** and you can use the **cpu-cluster** cluster that is available. In the **View additional configuration settings** specify 0.5 in the **Exit criterion** | **Training job time (hours)**.
 - Navigate to the AutoML run and name it **30minute_automl_run**.
 - Select a trained model from the AutoML run (not the best one) and select the **Explain model** option to perform a model explanation.
 - Deploy the selected model as an Azure Container Instance named **deploy-to-aci**.
