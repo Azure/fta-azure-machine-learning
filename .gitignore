@@ -357,3 +357,4 @@ mlruns
 *.amltemp
 *.amltmp
 .ipynb_aml_checkpoints/
+config.json
