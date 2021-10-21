@@ -217,17 +217,33 @@
         }
     ],
     "outputs": {
-        "ResourceNames": {
-            "type": "object",
-            "value": {
-                "azureMLWorkspace": "[variables('workspaceName')]",
-                "computeInstance": "[variables('computeInstanceName')]",
-                "computeCluster": "[variables('clusterName')]",
-                "storageAccount": "[variables('storageAccountName')]",
-                "keyVault": "[variables('keyVaultName')]",
-                "applicationInsights": "[variables('applicationInsightsName')]",
-                "containerRegistry": "[variables('containerRegistryName')]"
-            }
+        "azureMLWorkspace": {
+            "type": "string",
+            "value": "[variables('workspaceName')]"
+        },
+        "computeInstance": {
+            "type": "string",
+            "value":"[variables('computeInstanceName')]"
+        },
+        "computeCluster": {
+            "type": "string",
+            "value":"[variables('clusterName')]"
+        },
+        "storageAccount": {
+            "type": "string",
+            "value":"[variables('storageAccountName')]"
+        },
+        "keyVault": {
+            "type": "string",
+            "value":"[variables('keyVaultName')]"
+        },
+        "applicationInsights": {
+            "type": "string",
+            "value":"[variables('applicationInsightsName')]"
+        },
+        "containerRegistry": {
+            "type": "string",
+            "value":"[variables('containerRegistryName')]"
         }
     }
 }
