@@ -1,0 +1,106 @@
+name: Notebooks for fundamentals execute without errors
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'fundamentals/src/**'
+      - '.github/workflows/fundamentals-notebooks-ci.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'fundamentals/src/**'
+      - '.github/workflows/fundamentals-notebooks-ci.yml'
+  schedule:
+      - cron: "59 23 * * 0"
+    
+    
+jobs:
+  deploy-azure-resources:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    concurrency:
+       group: "SingleResourceGroup"
+       # If we had more resource groups we could use a dynamic group
+       # like ${{ github.ref }}-az-deploy. Alternatively, we could
+       # skip cleaning up the resources
+       cancel-in-progress: true
+    outputs:
+      azureMLWorkspace: ${{ steps.deploy.outputs.azureMLWorkspace }}
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 1
+    - name: Generate unique id to use in names
+      run: echo rndString=w$(shuf -er -n4  {a..z} {0..9}| paste -sd "") >> $GITHUB_ENV
+    - name: Login to Azure CLI
+      uses: azure/login@v1
+      with:
+        # See https://docs.microsoft.com/en-us/azure/developer/github/connect-from-azure
+        # Service principal needs to have an RBAC role that allows it to deploy AzureML
+        creds: ${{ secrets.ServicePrincipalCredentials }}
+    - name: Create empty.bicep file
+      run: touch empty.bicep
+    - name: Clean resource group
+      uses: azure/arm-deploy@v1
+      with:
+        resourceGroupName: ${{ secrets.FUNDAMENTALS_RESOURCEGROUPNAME }}
+        template: ./empty.bicep
+        deploymentName: "github-ci-notebooks-clean-${{ env.rndString }}"
+        deploymentMode: Complete
+    - name: Deploy new AzureML workspace
+      uses: azure/arm-deploy@v1
+      id: deploy
+      with:
+        resourceGroupName: ${{ secrets.FUNDAMENTALS_RESOURCEGROUPNAME }}
+        template: fundamentals/src/deployment/demo-deploy.json
+        deploymentName: "github-ci-notebooks-${{ env.rndString }}"
+        parameters: resourcePrefix="${{ env.rndString }}"
+    - name: Azure CLI logout
+      uses: azure/CLI@v1
+      with:
+        inlineScript: |
+          az logout
+          az cache purge
+          az account clear
+
+  test-notebooks:
+    needs: [deploy-azure-resources]
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    concurrency:
+       group: "SingleResourceGroup"
+       cancel-in-progress: true
+    env:
+       pyVer: 3.6
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 1
+    - name: Create config.json file
+      run: |
+        echo '{"subscription_id":"${{ secrets.AzureSubscriptionId }}","resource_group":"${{ secrets.FUNDAMENTALS_RESOURCEGROUPNAME }}","workspace_name":"${{ needs.deploy-azure-resources.outputs.azureMLWorkspace }}"}' > config.json
+    - name: Login to Azure CLI
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.ServicePrincipalCredentials }}
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: "${{ env.pyVer }}"
+    - name: Install dependencies
+      run: |
+        pip install azureml-sdk pandas sklearn azureml-mlflow mlflow pytest ipykernel nbmake
+        python -m ipykernel install --user --name python3-azureml
+    - name: Test notebooks
+      run: |
+        pytest --nbmake
+    - name: Azure CLI logout
+      uses: azure/CLI@v1
+      with:
+        inlineScript: |
+          az logout
+          az cache purge
+          az account clear
