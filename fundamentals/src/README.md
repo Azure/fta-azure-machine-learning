@@ -1,5 +1,7 @@
 # Demo setup for the AzureML fundamentals Live event
 
+[![Notebooks for fundamentals execute without errors](https://github.com/Azure/fta-azure-machine-learning/actions/workflows/fundamentals-notebooks-ci.yml/badge.svg)](https://github.com/Azure/fta-azure-machine-learning/actions/workflows/fundamentals-notebooks-ci.yml)
+
 ## Resources deployment
 
 Use the following links to deploy the required resources in your Azure subscription.
