@@ -1,7 +1,7 @@
 # Azure Machine Learning Enterprise Deployments Live event
 
 In this session you will learn how to design and implement [Azure Machine Learning (AzureML)](https://docs.microsoft.com/azure/machine-learning/overview-what-is-azure-machine-learning) using enterprise deployment features, so you can create a secure configuration that is compliant with your companies policies [Enterprise security and governance for AzureML](https://docs.microsoft.com/en-us/azure/machine-learning/concept-enterprise-security).
-The content of this session is available in our [github repository](https://aka.ms/ftalive/azureml/fundamentals).
+The content of this session is available in our [github repository](https://aka.ms/ftalive/azureml/enterprise-ml).
 
 ## Agenda
 
