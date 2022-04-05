@@ -74,7 +74,7 @@ jobs:
        group: "SingleResourceGroup"
        cancel-in-progress: true
     env:
-       pyVer: 3.6
+       pyVer: 3.8.5
     steps:
     - uses: actions/checkout@v2
       with:
