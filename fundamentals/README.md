@@ -16,7 +16,7 @@ The content of this session is available in our [github repository](https://aka.
 | 06. | AutoML | Wizard | Train an ML model on top of the dataset you just registered
 | 07. |  | Run | Explore what happens when running an AutoML process
 | 08. |  | Models | Review models trained and how they were tuned
-| 09. |  | Model explanation | Get insights on how the trained model works
+| 09. |  | Model explanation | Get insights on [how the trained model works](https://interpret.ml/) and the [Responsible AI toolbox](https://responsibleaitoolbox.ai/)
 | 10. | Model deployment | Deploy to ACI | Deploy a real time inference endpoint into Azure Container Instance
 | 11. | | Model registry | Review artifacts stored
 | 12. | | Real time endpoints | Review swagger.json and [test](https://reqbin.com/etrbvco6) the ACI endpoint
