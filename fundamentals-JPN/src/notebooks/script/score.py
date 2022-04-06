@@ -31,5 +31,3 @@ def run(raw_data):
     # Make prediction
     out = bst.predict(test_df)
     return out.tolist()
-
-
