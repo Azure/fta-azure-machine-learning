@@ -1,6 +1,6 @@
 # Azure Machine Learning 基礎編 Live event
 
-本ライブセッションでは、[Azure Machine Learning (AzureML)](https://docs.microsoft.com/azure/machine-learning/overview-what-is-azure-machine-learning) のコンポーネントの全体像や、[AzureML studio](https://docs.microsoft.com/azure/machine-learning/overview-what-is-machine-learning-studio) の Web ポータル機能を使ってクラウド上での AI を加速させる方法が理解をします。
+本ライブセッションでは、[Azure Machine Learning (AzureML)](https://docs.microsoft.com/azure/machine-learning/overview-what-is-azure-machine-learning) の概要を説明し、[AzureML Studio](https://docs.microsoft.com/azure/machine-learning/overview-what-is-machine-learning-studio) の Web ポータル機能や [Azure ML Python SDK](https://docs.microsoft.com/ja-JP/python/api/overview/azure/ml/?view=azure-ml-py) を使って機械学習のプロセスを実行する様子をデモンストレーションを通じて解説します。
 
 コンテンツは [github repository](https://aka.ms/ftalive/azureml/fundamentals) で公開されています。
 
@@ -8,40 +8,17 @@
 ## アジェンダ
 |     | トピック  | 機能 | 概要  
 | :-- | :----- | :-----  | :-----
-| 00. | イントロダクション  |     | プレゼンターやセッションの概要についてのイントロダクション
-| 01. | Demo : Azure Machine Learning サービス作成 |[Azure Portal](http://portal.azure.com/) | AzureML に含まれる各リソースの説明する。
-| 02. | Demo : Azure Machine Learning studio | [AzureML studio](https://ml.azure.com/) | studio のインタフェースをガイドする。
-| 03. |  | コンピューティング (Compute) | 様々なコンピューティングの選択肢について言及する
-| 04. |  | データストア (Datastores) | [サポートされているデータストレージサービスの種類](https://docs.microsoft.com/ja-JP/azure/machine-learning/how-to-access-data#supported-data-storage-service-types) を探索し登録する
-| 05. |  | データセット (Datasets) | データストアに格納されているデータをデータセットとして登録し、データから洞察を得る
-| 06. | 自動機械学習 (AutoML) | ウィザード | 登録したデータセットを利用して自動機械学習を実行する
-| 07. |  | 実行 (Run) | 自動機械学習の内部プロセスを確認する
-| 08. |  | モデル (Models) | 学習済みのモデルの一覧を確認する
-| 09. |  | モデルの理解| 学習済みモデルの精度などのメトリックやログ、また説明性を確認する
-| 10. | デプロイメント (Deployment) | ACI へのデプロイ | Azure Container Instance を用いたリアルタイム推論用エンドポイントをデプロイする
-| 11. | | モデル登録| 格納されているアーティファクトを確認する
-| 12. | | リアルタイム推論 | swagger.json を確認し、ACI のエンドポイントをテストする
-| 13. | デザイナー (Designer)| サンプル | サンプルのパイプラインをロードする
-| .   |  | モデル学習 | Compute Clusters を指定してモデル学習を実行する
-| .   |  | モデル推論 | リアルタイム・バッチ推論のパイプラインを構築し実行する
-| 13. | ノートブック (Notebooks) | フォルダ構造 | コードやノートブックが格納される場所を確認する
-| 14. |  | ターミナル (Terminal) | ターミナルや git を操作する
-| 15. |  | サンプル (Sample)| サンプルのノートブックを使い始めます
-| 16. |  | インテリセンス (IntelliSense)| ノートブックでのコーディングの効率性を高める方法を示す
-| 17. | AzureML SDK |  | Python を利用して AzureML Workspace を利用する
-| 18. |  | メトリックのロギング | Azure ML SDK や MLflow を利用する
-| 19. |  | スクリプトの実行 | リモートのクラスター環境でコードを実行する
-| 20. |  | 環境 (Environments) | ソフトウェアの依存環境を定義する
-| 21. |  | パイプライン (Pipeline) の作成 | パイプラインの中で複数のステップをオーケストレーションする
-| 22. |  | パイプラインのエンドポイント (Endpoint) の利用 | パブリッシュされたエンドポイントを確認し REST API 経由で実行する
-| 23. |  | 並列バッチ処理 (Parallel batch processing) | バッチ推論のパイプラインを作成し利用する
+| 00. | Introduction  |     | プレゼンターやセッションの概要について説明します。
+| 01. | Azure ML 概要  |     | Azure Machine Learning のコンポーネントや特徴を説明します。
+| 02. | Demo : Azure Machine Learning サービス作成 |[Azure Portal](http://portal.azure.com/) | AzureML に含まれる各リソースの説明する。
+| 03. | Demo : Azure Machine Learning studio | [AzureML Studio](https://ml.azure.com/) | Studio のインタフェースをガイドする。<br/> - 手順 : [azureml_studio_walk_through.md](demonstration/azureml_studio_walk_through.md)
+| 04. | Demo : Azure Machine Learning Python SDK | [AzureML Python SDK](https://docs.microsoft.com/ja-JP/python/api/overview/azure/ml/?view=azure-ml-py) | Python SDK を使った E2E の機械学習プロセスの実行方法をガイドする。<br/> - モデル学習 : [train-notebook.ipynb](src/notebooks/train-notebook.ipynb) <br/> - デプロイ: [deploy-notebook.ipynb](src/notebooks/deploy-notebook.ipynb)
+
 
 ## サンプル
 
 Azure ML のサンプルコード・ノートブックの一覧 : 
 
-- [Fun with AzureML repo](https://github.com/rndazurescript/FunWithAzureML)
-- [Many models solution accelerator](https://github.com/microsoft/solution-accelerator-many-models)
 - [Official AzureML notebook samples](https://github.com/Azure/MachineLearningNotebooks/)
 - [Community Driven AzureML notebook samples](https://github.com/Azure/azureml-examples)
 - [MLOps starter](https://aka.ms/mlops)
