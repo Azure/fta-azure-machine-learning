@@ -20,6 +20,11 @@ Please give us your feedback through the [feedback form](https://aka.ms/ftaLive-
 
 - [AzureML Enterprise Deployment](./enterprise-ml/): In this session you will learn how to design and implement [Azure Machine Learning (AzureML)](https://docs.microsoft.com/azure/machine-learning/overview-what-is-azure-machine-learning) using enterprise deployment features, so you can create a secure configuration that is compliant with your companies policies [Enterprise security and governance for AzureML](https://docs.microsoft.com/en-us/azure/machine-learning/concept-enterprise-security).
 
+### For Non-English
+
+- [Azure ML fundamentals (Japanese)](./fundamentals-JPN/)
+
+
 ## Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
