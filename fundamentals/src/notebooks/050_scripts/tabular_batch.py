@@ -13,5 +13,6 @@ def init():
 
 def run(mini_batch):
     print(mini_batch.info())
-    mini_batch["target"] = model.predict(mini_batch)
+    # Drop id column which was not used during the training of the model
+    mini_batch["target"] = model.predict(mini_batch.drop("id", axis=1, inplace=False))
     return mini_batch[["id", "target"]].values.tolist()

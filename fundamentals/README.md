@@ -16,14 +16,14 @@ The content of this session is available in our [github repository](https://aka.
 | 06. | AutoML | Wizard | Train an ML model on top of the dataset you just registered
 | 07. |  | Run | Explore what happens when running an AutoML process
 | 08. |  | Models | Review models trained and how they were tuned
-| 09. |  | Model explanation | Get insights on how the trained model works
+| 09. |  | Model explanation | Get insights on [how the trained model works](https://interpret.ml/) and the [Responsible AI toolbox](https://responsibleaitoolbox.ai/)
 | 10. | Model deployment | Deploy to ACI | Deploy a real time inference endpoint into Azure Container Instance
 | 11. | | Model registry | Review artifacts stored
-| 12. | | Real time endpoints | Review swagger.json and [test](https://reqbin.com/etrbvco6) the ACI endpoint
+| 12. | | Real time endpoints | Review swagger.json and [test](https://reqbin.com/jpipz03n) the ACI endpoint
 | 13. | Notebooks | Folder structure | Review where notebooks are saved
-| 14. |  | Terminal | Work with terminal and git
-| 15. |  | Samples | Get a sample notebook to get started
-| 16. |  | IntelliSense | Show coding productivity boosters within Notebooks
+| 14. |  | Samples | Get a sample notebook to get started
+| 15. |  | IntelliSense | Show coding productivity boosters within Notebooks
+| 16. |  | Terminal | Work with terminal and git
 | 17. | AzureML SDK | Working with resources | Manipulate your AzureML workspace with python code
 | 18. |  | Logging metrics | Explore AzureML SDK and MLflow
 | 19. |  | Submit script | Execute code on a remote cluster

@@ -3,8 +3,6 @@
 ## Demo environment setup
 
 - Deploy workspace using the instructions in [the src folder](./src/README.md)
-- Create Win10 VM and connect to portal/AzureML
-- 
 - Navigate to **Author** | **Notebooks**. Run all notebooks located in the **fta-live** | **fundamentals** | **src** | **notebooks** folder in the **Files** tree.
 - Configure and run a regression autoML experiment on top of the **diabetes-tabular** that got registered. You can create a new experiment named **diabetes-automl-experiment**. Target column is **target** and you can use the **cpu-cluster** cluster that is available. In the **View additional configuration settings** specify 0.5 in the **Exit criterion** | **Training job time (hours)**.
 - Navigate to the AutoML run and name it **30minute_automl_run**.
@@ -15,13 +13,6 @@
 ## Before the live event
 
 - Start your compute instance and execute the [before_event.py](./src/before_event.py) script in a terminal to scale up the **cpu-cluster**.
-- Open following pages:
-    - https://fasttrack.azure.com/live/category/Data
-    - https://github.com/Azure/fta-azure-machine-learning/tree/main/enterprise-ml
-    - https://docs.microsoft.com/en-us/azure/machine-learning/concept-azure-machine-learning-architecture
-    - https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/ai-machine-learning-resource-organization
-    - https://docs.microsoft.com/en-us/azure/machine-learning/tutorial-create-secure-workspace
-    - 
 - Open an Azure portal, navigate to the resource group and filter out the **container instances** to be able to show only the 5 AzureML deployed resources.
 - Navigate to the **deploy-to-aci** endpoint:
   - Open the **Swagger URI**. Copy paste it in a [json formatter](https://www.jsonformatter.io/)
@@ -30,9 +21,24 @@
 
 ## During the live event
 
-- From local pc - open Azure ML workspace to demonstrate how secure connectivity restricts access
+- Tell audience that you will be training models against the [scikit learn diabetes dataset](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_diabetes.html). The dataset contains features like blood pressure and glucose concentration of 442 diabetes patients which are normalized and stored into 10 features named 0 to 9. The target column of the dataset is a numeric value representing a quantitative measure of the disease progression, one year after the features where measured.
+- While showing the profile of the **diabetes-tabular** dataset, show the **box and whisker plot** where you can see some outliers above 0.1, something that you will use later in the model interpretation to form a cohort.
 
+  ![Outliers in dataset profile](images/show_feature_2_outlier_more_than_0.1.png)
+- In AutoML run, in the best model's **Explanations** tab:
+  - Mention that AutoML stored two global explanations; one for the raw features and one for the engineered features.
 
+    ![Engineered vs raw features explanations](images/raw_feautures_vs_engineered_features_explanations.png)
+
+  - Create a cohort named **Feature 2 more than 0.1** (or just **F2G0.1**) to show how in that cohort, the most important feature is the feature named **2**.
+
+    ![Creating the cohort](images/explainer_cohort.jpg)
+
+  - After creating the cohort, go to the **Individual feature importance** and show how in that cohort, all records have **Predicted Y** value above 220 (show audience that axis of that graph can change).
+
+    ![Cohort individual records](images/show_feature_2_individual_records.png)
+
+- Ask for [feedback](https://aka.ms/ftaLive-feedback).
 
 ## After the live event
 
