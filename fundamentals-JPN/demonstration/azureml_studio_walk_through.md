@@ -106,24 +106,31 @@ Compute Instance を利用したコードを開発・編集・実行すること
 自動機械学習 (AutoML) は Azure ML Studio もしくは Azure ML Python SDK などのコードから実行することができます。Azure ML Studio での実行はあまり細かい設定はできませんが、機械学習のタスクに対応しているデータセット (Datasets) があれば簡単に実行することができます。
 
 "新しい自動 ML の実行" をクリックして自動機械学習の設定を始めます。
+
 <img src="../docs/images/azureml-automl1.png" width=500/><br/>
 
 最初に対象のデータセット (Datasets) である `Titanic` を選択します。
+
 <img src="../docs/images/azureml-automl2.png" width=500/><br/>
 
 任意の実験名を記入し、予測の対象をする変数であるターゲット変数を選択します。Titanic 号のサンプルデータでは `Surviced` を選択します。計算環境としてコンピューティングクラスター (Compute Clusters) の `cpu-clusters` を選択します。
+
 <img src="../docs/images/azureml-automl4.png" width=500/><br/>
 
 機械学習のタスクを設定します。今回は "分類" を選択します。
+
 <img src="../docs/images/azureml-automl5.png" width=500/><br/>
 
 次に検証方法として "k 分割交差検証" (クロスバリデーション) を "5" のクエス検証数で設定し、テストデータを学習データからランダムに 10 % 設定します。"終了" を押下して自動機械学習によるモデル学習を開始します。
+
 <img src="../docs/images/azureml-automl6.png" width=500/><br/>
 
 モデル学習が始まると "状態" が "実行中 モデルトレーニング" と表示されます。
+
 <img src="../docs/images/azureml-automl7.png" width=500/><br/>
 
 モデル学習が完了すると "状態" が "完了" と表示されます。また左上の "最適なモデルの概要" セクションから最終的に精度が一番高かったアルゴリズムや精度の情報などが表示されます。
+
 <img src="../docs/images/azureml-automl8.png" width=500/><br/>
 
 "データガードレール" タブではモデル学習前のデータ前処理におけるデータ品質の確認結果が表示されます。
@@ -132,40 +139,51 @@ Compute Instance を利用したコードを開発・編集・実行すること
 
 
 "モデル" タブでは試行されたモデルの一覧が確認できます。一番精度が高い試行に関してはデフォルトで説明性が付与されます。
+
 <img src="../docs/images/azureml-automl10.png" width=500/><br/>
 
 一番精度が高かったモデルの詳細を確認します。
+
 <img src="../docs/images/azureml-automl11.png" width=500/><br/>
 
 "メトリック"タブでは、モデルの精度が数値やチャートから確認できます。
+
 <img src="../docs/images/azureml-automl13.png" width=500/><br/>
 
 "データ変換 (プレビュー)"タブでは、データ前処理の流れを確認することができます。
+
 <img src="../docs/images/azureml-automl14.png" width=500/><br/>
 
 "説明 (プレビュー)" ではモデル説明性を確認することができます。説明 ID が二つありますが、上の方はデータ前処理を実行する前の変数名で表示され、下の方はデータ前処理後の変数名で表示されるという違いあります。
+
 <img src="../docs/images/azureml-automl15.png" width=500/><br/>
 
 細かいログは "出力とロブ"タブから確認することができます。
+
 <img src="../docs/images/azureml-automl16.png" width=500/><br/>
 
 以上までがモデル学習の部分です。以下、モデルのエンドポイント (Endpoints) の作成を進めていきます。
 
 今回は Azure Container Instance に学習済みモデルを Web サービスとしてデプロイします。リアルタイム推論の形態です。"デプロイ"ボタンから "Web サービスへの配置" をクリックします。
+
 <img src="../docs/images/azureml-automl-deploy1.png" width=500/><br/>
 
 エンドポイントの名前を入力し、コンピューティングの種類として "Azure コンテナーインスタンス" を選択します。この環境は主にテスト用に用いられます。本番用途であれば Azure Kubernetes Services にデプロイすることを推奨します。
 
 自動機械学習 (AutoML) のモデルであればコードの開発や環境 (Environments) の設定は不要です。Azure ML 側で自動で実行されます (モデルがお客様自身で開発されたものであれば推論コードや環境設定が必要です)し、カスタマイズすることも可能です。"デプロイ" をクリックしてデプロイメントを開始します。
+
 <img src="../docs/images/azureml-automl-deploy2.png" width=500/><br/>
 
 デプロイが完了するとエンドポイントが生成され、利用したモデルの情報などのメタデータが確認できます。
+
 <img src="../docs/images/azureml-automl-deploy3.png" width=500/><br/>
 
 "テスト"タブではモデルにテストデータをインプットし予測値を取得することができます。
+
 <img src="../docs/images/azureml-automl-deploy4.png" width=500/><br/>
 
 また "使用"タブからは、Python や C# から利用するためのサンプルコードが表示されます。
+
 <img src="../docs/images/azureml-automl-deploy5.png" width=500/><br/>
 
 
