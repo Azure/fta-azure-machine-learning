@@ -199,7 +199,9 @@ Compute Instance を利用したコードを開発・編集・実行すること
 <img src="../docs/images/azureml-designer-samples.png" width=500/><br/>
 
 学習パイプラインのドラフトが表示されます。
+
 <img src="../docs/images/azureml-designer-automobile-regression.png" width=500/><br/>
+
 
 設定からパイプラインで利用するコンピューティングクラスター (Compute Clusters) を選択します。
 
