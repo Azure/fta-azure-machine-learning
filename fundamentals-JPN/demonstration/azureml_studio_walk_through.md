@@ -124,11 +124,11 @@ Compute Instance を利用したコードを開発・編集・実行すること
 
 次に検証方法として "k 分割交差検証" (クロスバリデーション) を "5" のクエス検証数で設定し、テストデータを学習データからランダムに 10 % 設定します。"終了" を押下して自動機械学習によるモデル学習を開始します。
 
-<img src="../docs/images/azureml-automl-model-setting.png" width=500/><br/>
+<img src="../docs/images/azureml-automl-test-settings.png" width=500/><br/>
 
 モデル学習が始まると "状態" が "実行中 モデルトレーニング" と表示されます。
 
-<img src="../docs/images/azureml-automl-test-settings.png" width=500/><br/>
+<img src="../docs/images/azureml-automl-run-starting.png" width=500/><br/>
 
 モデル学習が完了すると "状態" が "完了" と表示されます。また左上の "最適なモデルの概要" セクションから最終的に精度が一番高かったアルゴリズムや精度の情報などが表示されます。
 
