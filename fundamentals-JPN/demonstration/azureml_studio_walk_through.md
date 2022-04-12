@@ -4,8 +4,20 @@ Azure Machine Learning Studio (aka Azure ML Studio) のデモンストレーシ�
 
 <br/>
 
+### アジェンダ
+1. [Azure ML Studio 画面構成](#1-azure-ml-studio-画面構成)
+2. [コンピューティングインスタンス (Compute Instance) の作成](#2-コンピューティングインスタンス-compute-instance-の作成)
+3. [コンピューティングクラスター (Compute Clusters) の作成](#3-コンピューティングクラスター-compute-clusters-の作成)
+4. [環境 (Environments) の作成](#4-環境-environments-の作成)
+5. [データストア (Datastores) の設定](#5-データストア-datastores-の設定)
+6. [データセット (Datasets) の登録](#6-データセット-datasets-の登録)
+7. [Notebooks の操作性](#7-notebooks-の操作性)
+8. [自動機械学習 (AutoML) によるモデル開発とデプロイ](#8-自動機械学習-automl-によるモデル開発とデプロイ)
+9. [デザイナー (Designer) によるモデル開発とデプロイ](#9-デザイナー-designer-によるモデル開発とデプロイ)
+
+
 ### 1. Azure ML Studio 画面構成
-[ml.azureml.com](ml.azurem.com) にアクセスします。
+[ml.azureml.com](ml.azurem.com) にアクセスします。基本的には左のメニューから各種機能にアクセスして作業をします。
 
 <img src="../docs/images/azureml-workspace.png" width=500/>
 
@@ -49,60 +61,69 @@ Jupyter などの開発環境の起動できることを確認します。
 
 <br/>
 
-### 4. Environments の作成
+### 4. 環境 (Environments) の作成
 
 環境の名称は `lightgbm-python-env` とし、「Python 仮想環境」を選択し、Python ライブラリとそのバージョンが記載されている [../src/environments/conda-env.yml](../src/environments/conda-env.yml) の内容をコピー&ペーストします。<br/>
 次へ進み、内容に誤りない確認をして環境を作成します。<br/>
 
-<!-- TODO:UPDATE Screenshot-->
-<img src="../docs/images/azureml-environment1.png" width=500/><br/> 
+<img src="../docs/images/azureml-environments-create.png" width=500/><br/> 
 
 正常に環境が登録されていることを確認します。
 
-<!-- TODO:UPDATE Screenshot -->
-<img src="../docs/images/azureml-environment2.png" width=500/><br/>
+<img src="../docs/images/azureml-environments-confirm.png" width=500/><br/>
 
 
 <br/>
 
-### 5. データストア (Datastores) の構成確認
+### 5. データストア (Datastores) の設定
 
-<!-- TODO : ADD Screenshot-->
+データストア (Datastores) の機能にアクセスします。
+
+<img src="../docs/images/azureml-datastores-list.png" width=500/><br/>
+
 いくつかのデータストア (Datastores) が登録済みですが、その中でもデータセット (Datasets) 作成時にデフォルトで利用されるデータストアの "workspaceblobstore" を選択します。
 
+<img src="../docs/images/azureml-datastores-default.png" width=500/><br/>
 
 表示される画面に接続先の Azure Blob Storage の情報が表示されていたり、"認証の更新"をクリックすることで、認証方法を設定・変更することができます。
 
+<img src="../docs/images/azureml-datastores-credential-updates.png" width=500/><br/>
 
 今回のデモンストレーションではデータストア (Datastores) の存在は意識しなくても操作できますが、Azure ML Workspace に新たにデータソースを接続したい場合は理解しておく必要があります。
 
 <br/>
 
-### 5. データセット (Datasets) の登録
+### 6. データセット (Datasets) の登録
 モデル学習に必要なデータセット (Datasets) を作成します。
 今回はデータストアにあるデータを利用するのではなく、ブラウザを開いている作業端末に CSV (data フォルダの [Titanic.csv](../src/data/Titanic.csv)) をダウンロードして、データセット (Datasets) として登録します。アップロード時に自動的にデフォルトのデータストアである "workspaceblobstore" にファイルが保存されています。
 
 データセットの名称は `titanic` として、データセットの種類は _表形式_ とします。<br/>
 <img src="../docs/images/azureml-dataset1.png" width=500/><br/>
 data フォルダの Titanic.csv データをアップロードします。次にファイル形式、区切り記号などの情報に誤りがないことを確認して次に進みます。<br/>
-<img src="../docs/images/azureml-dataset2.png" width=500/><br/> 
+<img src="../docs/images/azureml-dataset2.png" width=500/><br/>
 スキーマの設定に誤りがないことを確認して次に進み、データセットの登録を完了します。<br/>
-<img src="../docs/images/azureml-dataset3.png" width=500/><br/>  
+<img src="../docs/images/azureml-dataset3.png" width=500/><br/>
 正常に登録されていることを確認します。<br/>
 <img src="../docs/images/azureml-dataset4.png" width=900/><br/>
 
 
-### 6. Notebooks によるモデル学習
+<br/>
 
-<!-- TODO:ADD Screenshot-->
+### 7. Notebooks の操作性
 
 Compute Instance を利用したコードを開発・編集・実行することができます。インターフェースとして、Azure ML Studio に統合された Notebooks を利用することができます。
 
+<img src="../docs/images/azureml-notebooks-train-notebook.png" width=500/><br/>
 
-他には Compute Instance が対応している開発環境として Jupyter、JupyterLab、VSCode、R Studio が選択できます。
+
+他には Compute Instance が対応している開発環境として Notebooks のインターフェースから Jupyter、JupyterLab、VSCode が選択できます (R Studio は Compute Instance の画面から選択可能)。
+
+<img src="../docs/images/azureml-notebooks-choose-ide.png" width=500/><br/>
 
 
-### 7. AutoML
+<br/>
+
+### 8. 自動機械学習 (AutoML) によるモデル開発とデプロイ
 
 自動機械学習 (AutoML) は Azure ML Studio もしくは Azure ML Python SDK などのコードから実行することができます。Azure ML Studio での実行はあまり細かい設定はできませんが、機械学習のタスクに対応しているデータセット (Datasets) があれば簡単に実行することができます。
 
@@ -187,10 +208,10 @@ Compute Instance を利用したコードを開発・編集・実行すること
 
 <img src="../docs/images/azureml-automl-deploy-aci-sample-codes.png" width=500/><br/>
 
+<br/>
 
-### 8. デザイナー (Designer)
 
-<!-- TODO:ADD -->
+### 9. デザイナー (Designer) によるモデル開発とデプロイ
 
 デザイナー (Designer) は、マウスのドラッグ&ドロップでモデル学習やリアルタイム・バッチ推論のパイプラインを作成し実行することができる機能です。
 
