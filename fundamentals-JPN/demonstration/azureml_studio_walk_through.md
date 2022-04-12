@@ -53,9 +53,12 @@ Jupyter などの開発環境の起動できることを確認します。
 
 環境の名称は `lightgbm-python-env` とし、「Python 仮想環境」を選択し、Python ライブラリとそのバージョンが記載されている [../src/environments/conda-env.yml](../src/environments/conda-env.yml) の内容をコピー&ペーストします。<br/>
 次へ進み、内容に誤りない確認をして環境を作成します。<br/>
+
 <!-- TODO:UPDATE Screenshot-->
 <img src="../docs/images/azureml-environment1.png" width=500/><br/> 
-正常に環境が登録されていることを確認します。<br/>
+
+正常に環境が登録されていることを確認します。
+
 <!-- TODO:UPDATE Screenshot -->
 <img src="../docs/images/azureml-environment2.png" width=500/><br/>
 
@@ -101,95 +104,178 @@ Compute Instance を利用したコードを開発・編集・実行すること
 
 ### 7. AutoML
 
-<!-- TODO:ADD Screenshot-->
-
 自動機械学習 (AutoML) は Azure ML Studio もしくは Azure ML Python SDK などのコードから実行することができます。Azure ML Studio での実行はあまり細かい設定はできませんが、機械学習のタスクに対応しているデータセット (Datasets) があれば簡単に実行することができます。
 
 "新しい自動 ML の実行" をクリックして自動機械学習の設定を始めます。
 
-<img src="../docs/images/azureml-automl1.png" width=500/><br/>
+<img src="../docs/images/azureml-automl-start.png" width=500/><br/>
 
 最初に対象のデータセット (Datasets) である `Titanic` を選択します。
 
-<img src="../docs/images/azureml-automl2.png" width=500/><br/>
+<img src="../docs/images/azureml-automl-select-datasets.png" width=500/><br/>
 
 任意の実験名を記入し、予測の対象をする変数であるターゲット変数を選択します。Titanic 号のサンプルデータでは `Surviced` を選択します。計算環境としてコンピューティングクラスター (Compute Clusters) の `cpu-clusters` を選択します。
 
-<img src="../docs/images/azureml-automl4.png" width=500/><br/>
+<img src="../docs/images/azureml-automl-run-settings.png" width=500/><br/>
 
 機械学習のタスクを設定します。今回は "分類" を選択します。
 
-<img src="../docs/images/azureml-automl5.png" width=500/><br/>
+<img src="../docs/images/azureml-automl-model-settings.png" width=500/><br/>
 
 次に検証方法として "k 分割交差検証" (クロスバリデーション) を "5" のクエス検証数で設定し、テストデータを学習データからランダムに 10 % 設定します。"終了" を押下して自動機械学習によるモデル学習を開始します。
 
-<img src="../docs/images/azureml-automl6.png" width=500/><br/>
+<img src="../docs/images/azureml-automl-model-setting.png" width=500/><br/>
 
 モデル学習が始まると "状態" が "実行中 モデルトレーニング" と表示されます。
 
-<img src="../docs/images/azureml-automl7.png" width=500/><br/>
+<img src="../docs/images/azureml-automl-test-settings.png" width=500/><br/>
 
 モデル学習が完了すると "状態" が "完了" と表示されます。また左上の "最適なモデルの概要" セクションから最終的に精度が一番高かったアルゴリズムや精度の情報などが表示されます。
 
-<img src="../docs/images/azureml-automl8.png" width=500/><br/>
+<img src="../docs/images/azureml-automl-run-complete.png" width=500/><br/>
 
 "データガードレール" タブではモデル学習前のデータ前処理におけるデータ品質の確認結果が表示されます。
 
-<img src="../docs/images/azureml-automl9.png" width=500/><br/>
+<img src="../docs/images/azureml-automl-dataguardrails.png" width=500/><br/>
 
 
 "モデル" タブでは試行されたモデルの一覧が確認できます。一番精度が高い試行に関してはデフォルトで説明性が付与されます。
 
-<img src="../docs/images/azureml-automl10.png" width=500/><br/>
+<img src="../docs/images/azureml-automl-model-list.png" width=500/><br/>
 
 一番精度が高かったモデルの詳細を確認します。
 
-<img src="../docs/images/azureml-automl11.png" width=500/><br/>
+<img src="../docs/images/azureml-automl-bestmodel-details.png" width=500/><br/>
 
 "メトリック"タブでは、モデルの精度が数値やチャートから確認できます。
 
-<img src="../docs/images/azureml-automl13.png" width=500/><br/>
+<img src="../docs/images/azureml-automl-bestmodel-metrics.png" width=500/><br/>
 
 "データ変換 (プレビュー)"タブでは、データ前処理の流れを確認することができます。
 
-<img src="../docs/images/azureml-automl14.png" width=500/><br/>
+<img src="../docs/images/azureml-automl-datagraph.png" width=500/><br/>
 
 "説明 (プレビュー)" ではモデル説明性を確認することができます。説明 ID が二つありますが、上の方はデータ前処理を実行する前の変数名で表示され、下の方はデータ前処理後の変数名で表示されるという違いあります。
 
-<img src="../docs/images/azureml-automl15.png" width=500/><br/>
+<img src="../docs/images/azureml-automl-explanation.png" width=500/><br/>
 
 細かいログは "出力とロブ"タブから確認することができます。
 
-<img src="../docs/images/azureml-automl16.png" width=500/><br/>
+<img src="../docs/images/azureml-automl-logs.png" width=500/><br/>
 
 以上までがモデル学習の部分です。以下、モデルのエンドポイント (Endpoints) の作成を進めていきます。
 
 今回は Azure Container Instance に学習済みモデルを Web サービスとしてデプロイします。リアルタイム推論の形態です。"デプロイ"ボタンから "Web サービスへの配置" をクリックします。
 
-<img src="../docs/images/azureml-automl-deploy1.png" width=500/><br/>
+<img src="../docs/images/azureml-automl-deploy-aci-start.png" width=500/><br/>
 
 エンドポイントの名前を入力し、コンピューティングの種類として "Azure コンテナーインスタンス" を選択します。この環境は主にテスト用に用いられます。本番用途であれば Azure Kubernetes Services にデプロイすることを推奨します。
 
 自動機械学習 (AutoML) のモデルであればコードの開発や環境 (Environments) の設定は不要です。Azure ML 側で自動で実行されます (モデルがお客様自身で開発されたものであれば推論コードや環境設定が必要です)し、カスタマイズすることも可能です。"デプロイ" をクリックしてデプロイメントを開始します。
 
-<img src="../docs/images/azureml-automl-deploy2.png" width=500/><br/>
+<img src="../docs/images/azureml-automl-deploy-aci-settings.png" width=500/><br/>
 
 デプロイが完了するとエンドポイントが生成され、利用したモデルの情報などのメタデータが確認できます。
 
-<img src="../docs/images/azureml-automl-deploy3.png" width=500/><br/>
+<img src="../docs/images/azureml-automl-deploy-aci-endpoint.png" width=500/><br/>
 
 "テスト"タブではモデルにテストデータをインプットし予測値を取得することができます。
 
-<img src="../docs/images/azureml-automl-deploy4.png" width=500/><br/>
+<img src="../docs/images/azureml-automl-deploy-aci-test.png" width=500/><br/>
 
 また "使用"タブからは、Python や C# から利用するためのサンプルコードが表示されます。
 
-<img src="../docs/images/azureml-automl-deploy5.png" width=500/><br/>
+<img src="../docs/images/azureml-automl-deploy-aci-sample-codes.png" width=500/><br/>
 
 
-### 8. Designer
+### 8. デザイナー (Designer)
 
 <!-- TODO:ADD -->
 
+デザイナー (Designer) は、マウスのドラッグ&ドロップでモデル学習やリアルタイム・バッチ推論のパイプラインを作成し実行することができる機能です。
+
+ここではサンプルにある "Regression - Automobile Price Prediction (Basic)" を使います。
+
+<img src="../docs/images/azureml-designer-samples.png" width=500/><br/>
+
+学習パイプラインのドラフトが表示されます。
+<img src="../docs/images/azureml-designer-automobile-regression.png" width=500/><br/>
+
+設定からパイプラインで利用するコンピューティングクラスター (Compute Clusters) を選択します。
+
+<img src="../docs/images/azureml-designer-configure-compute.png" width=500/><br/>
+
+"送信" をクリックし、任意の実験名を記載し、パイプラインを実行します。
+
+<img src="../docs/images/azureml-designer-train-setup.png" width=500/><br/>
+
+実験が完了すると、各モジュールに "完了" というメッセージが表示されます。
+
+<img src="../docs/images/azureml-designer-train-run-complete.png" width=500/><br/>
 
 
+モデルが完成したので推論環境を構築していきます。デザイナー (Desginer) はリアルタイム推論とバッチ推論の両方をサポートしています (AutoML はリアルタイム推論のみサポート)。
+
+
+"推論パイプラインの作成" から "リアルタイム推論パイプライン" をクリックします。
+
+<img src="../docs/images/azureml-designer-create-realtime-inference-pipeline.png" width=500/><br/>
+
+リアルタイム推論専用のタブページが作成され、ドラフトのパイプラインが表示されます。
+
+<img src="../docs/images/azureml-designer-realtime-inference-pipeline-draft.png" width=500/><br/>
+
+デプロイ前にこのパイプラインを実行します。"送信" をクリックし、任意の実験名を入力して実行します。
+
+<img src="../docs/images/azureml-designer-realtime-inference-setup.png" width=500/><br/>
+
+実行が完了すると先ほどと同様、各モジュールに "完了" というメッセージが表示されます。
+
+<img src="../docs/images/azureml-designer-realtime-inference-run-complete.png" width=500/><br/>
+
+次にこのリアルタイム推論パイプラインを Azure Container Instance にデプロイします。"デプロイ" をクリックし、任意の名前を入力し、コンピューティングの種類で "Azure コンテナーインスタンス" を選択し、デプロイを開始します。
+
+<img src="../docs/images/azureml-designer-realtime-inference-deploy.png" width=500/><br/>
+
+デプロイが正常に完了するとデプロイ状態が "Healty" と表示されます。その他作成日などのメタデータも確認することができます。
+
+<img src="../docs/images/azureml-designer-realtime-inference-endpoints.png" width=500/><br/>
+
+また、テストタブの画面では推論環境にテストデータを送信して、予測値を取得する流れを検証することができます。
+
+<img src="../docs/images/azureml-designer-realtime-inference-endpoints-test.png" width=500/><br/>
+
+テストタブの画面では推論環境の REST API の URI や認証に用いるアクセスキー、Python や C# のサンプルコードにアクセスできます。
+
+<img src="../docs/images/azureml-designer-realtime-inference-consume.png" width=500/><br/>
+
+次にバッチ推論のパイプラインを作成します。先ほどと同様 "推論パイプラインの作成" をクリックし、今回は "バッチ推論パイプライン" を選択します。
+
+<img src="../docs/images/azureml-designer-create-batch-inference-pipeline.png" width=500/><br/>
+
+パイプラインのドラフトが表示されます。
+
+<img src="../docs/images/azureml-designer-batch-inference-pipeline-draft.png" width=500/><br/>
+
+"送信" をクリックし、任意の実験名を記載し、パイプラインを実行します。
+
+<img src="../docs/images/azureml-designer-batch-inference-setup.png" width=500/><br/>
+
+実験が完了すると、各モジュールに "完了" というメッセージが表示されます。
+
+<img src="../docs/images/azureml-designer-batch-inference-run-complete.png" width=500/><br/>
+
+次にこのバッチ推論パイプラインを公開します。
+
+<img src="../docs/images/azureml-designer-batch-inference-deploy.png" width=500/><br/>
+
+パイプラインのメニューの "パイプライン エンドポイント" のタブページでバッチ推論のパイプラインが確認できます。
+
+<img src="../docs/images/azureml-designer-batch-inference-endpoint.png" width=500/><br/>
+
+パイプライン名のリンクをクリックすると REST API の RUI やパイプラインのチャートなどの情報が確認できます。
+
+<img src="../docs/images/azureml-designer-batch-inference-endpoint-details.png" width=500/><br/>
+
+
+以上です。
