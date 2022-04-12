@@ -16,6 +16,8 @@ Azure Machine Learning Studio (aka Azure ML Studio) のデモンストレーシ�
 9. [デザイナー (Designer) によるモデル開発とデプロイ](#9-デザイナー-designer-によるモデル開発とデプロイ)
 
 
+<br/>
+
 ### 1. Azure ML Studio 画面構成
 [ml.azureml.com](ml.azurem.com) にアクセスします。基本的には左のメニューから各種機能にアクセスして作業をします。
 
