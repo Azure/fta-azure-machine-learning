@@ -116,6 +116,8 @@ Jupyter などの開発環境の起動できることを確認します。
 
 表示される画面に接続先の Azure Blob Storage の情報が表示されていたり、"認証の更新"をクリックすることで、認証方法を設定・変更することができます。
 
+> :warning: デフォルトではアクセスキーなどの資格情報を使いますが、Azure Active Directory トークンを利用した ID ベースのアクセスも設定可能です。ただし自動機械学習 (AutoML) のシナリオではサポートされません (2022年4月現在)。
+
 <img src="../docs/images/azureml-datastores-credential-updates.png" width=500/><br/>
 
 今回のデモンストレーションではデータストア (Datastores) の存在は意識しなくても操作できますが、Azure ML Workspace に新たにデータソースを接続したい場合は理解しておく必要があります。
@@ -133,14 +135,21 @@ Jupyter などの開発環境の起動できることを確認します。
 モデル学習に必要なデータセット (Datasets) を作成します。
 今回はデータストアにあるデータを利用するのではなく、ブラウザを開いている作業端末に CSV (data フォルダの [Titanic.csv](../src/data/Titanic.csv)) をダウンロードして、データセット (Datasets) として登録します。アップロード時に自動的にデフォルトのデータストアである "workspaceblobstore" にファイルが保存されています。
 
-データセットの名称は `titanic` として、データセットの種類は _表形式_ とします。<br/>
+データセットの名称は `titanic` として、データセットの種類は _表形式_ とします。
+
 <img src="../docs/images/azureml-dataset1.png" width=500/><br/>
+
 data フォルダの Titanic.csv データをアップロードします。次にファイル形式、区切り記号などの情報に誤りがないことを確認して次に進みます。<br/>
-<img src="../docs/images/azureml-dataset2.png" width=500/><br/>
-スキーマの設定に誤りがないことを確認して次に進み、データセットの登録を完了します。<br/>
-<img src="../docs/images/azureml-dataset3.png" width=500/><br/>
-正常に登録されていることを確認します。<br/>
-<img src="../docs/images/azureml-dataset4.png" width=900/><br/>
+
+<img src="../docs/images/azureml-dataset2.png" width=500/>
+
+スキーマの設定に誤りがないことを確認して次に進み、データセットの登録を完了します。
+
+<img src="../docs/images/azureml-dataset3.png" width=500/>
+
+正常に登録されていることを確認します。
+
+<img src="../docs/images/azureml-dataset4.png" width=900/>
 
 ---
 参考情報
@@ -177,15 +186,17 @@ Compute Instance を利用したコードを開発・編集・実行すること
 
 <img src="../docs/images/azureml-automl-start.png" width=500/><br/>
 
-最初に対象のデータセット (Datasets) である `Titanic` を選択します。
+最初に対象のデータセット (Datasets) である `Titanic` を選択します。タイタニック号の乗客情報とそれぞれの生死のフラグデータが含まれます。
 
 <img src="../docs/images/azureml-automl-select-datasets.png" width=500/><br/>
 
-任意の実験名を記入し、予測の対象をする変数であるターゲット変数を選択します。Titanic 号のサンプルデータでは `Surviced` を選択します。計算環境としてコンピューティングクラスター (Compute Clusters) の `cpu-clusters` を選択します。
+任意の実験名を記入し、予測の対象をする変数であるターゲット変数を選択します。Titanic 号のサンプルデータでは `Survived` を選択します。生死のフラグ変数です。
+
+また、計算環境としてコンピューティングクラスター (Compute Clusters) の `cpu-clusters` を選択します。
 
 <img src="../docs/images/azureml-automl-run-settings.png" width=500/><br/>
 
-機械学習のタスクを設定します。今回は "分類" を選択します。
+機械学習のタスクを設定します。今回のデータは Titanic 号の乗客の生死 `Survived` の予測 (=2 値分類) なので "分類" を選択します。
 
 <img src="../docs/images/azureml-automl-model-settings.png" width=500/><br/>
 
@@ -288,7 +299,9 @@ Compute Instance を利用したコードを開発・編集・実行すること
 <img src="../docs/images/azureml-designer-train-run-complete.png" width=500/><br/>
 
 
-モデルが完成したので推論環境を構築していきます。デザイナー (Desginer) はリアルタイム推論とバッチ推論の両方をサポートしています (AutoML はリアルタイム推論のみサポート)。
+モデルが完成したので推論環境を構築していきます。
+
+> :info: デザイナー (Desginer) はリアルタイム推論とバッチ推論の両方をサポートしていますが、自動機械学習 (AutoML) はリアルタイム推論のみサポートしています。
 
 
 "推論パイプラインの作成" から "リアルタイム推論パイプライン" をクリックします。
