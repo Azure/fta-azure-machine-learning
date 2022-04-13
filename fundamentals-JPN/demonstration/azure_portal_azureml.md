@@ -1,4 +1,4 @@
-#### [Prev](../FTA-Live-AzureML-Fundamentals.pdf) | [Home](../README.md)  | [Next](./azureml_studio_walk_through.md)
+#### [Prev](../FTA-Live-AzureML-Fundamental.pdf) | [Home](../README.md)  | [Next](./azureml_studio_walk_through.md)
 
 <br/>
 
@@ -78,4 +78,4 @@ Azure Machine Learning の作成済みリソースが表示されます。まだ
 
 <br/>
 
-#### [Prev](../FTA-Live-AzureML-Fundamentals.pdf) | [Home](../README.md)  | [Next](./azureml_studio_walk_through.md)
+#### [Prev](../FTA-Live-AzureML-Fundamental.pdf) | [Home](../README.md)  | [Next](./azureml_studio_walk_through.md)
