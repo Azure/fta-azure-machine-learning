@@ -23,8 +23,6 @@ Azure Portal を利用した Azure Machine Learning (aka Azure ML) のサービ�
 
 ### 1. Azure Portal でのサービス作成
 
-
-
 Azure Portal を開きます。上部の検索ボックスで "機械学習" と入力し、Azure Machine Learning に該当する "機械学習" を選択します。
 
 <img src="../docs/images/azureml-portal-search-ml.png" width=500/>
@@ -57,6 +55,14 @@ Azure Machine Learning の作成済みリソースが表示されます。まだ
 
 <img src="../docs/images/azureml-portal-create-confirm.png" width=500/>
 
+
+---
+参考情報
+- [ポータルまたは Python SDK を使用して Azure Machine Learning ワークスペースを管理する](https://docs.microsoft.com/ja-JP/azure/machine-learning/how-to-manage-workspace?tabs=python)
+- [Azure リソースの名前付け規則と制限事項 - Azure Machine Learning](https://docs.microsoft.com/ja-jp/azure/azure-resource-manager/management/resource-name-rules#microsoftmachinelearningservices)
+- [名前付け規則を定義する (Cloud Adoption Framework)](https://docs.microsoft.com/ja-jp/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming)
+---
+
 <br/>
 
 ### 2. 作成されたサービスの確認
@@ -75,6 +81,11 @@ Azure Machine Learning の作成済みリソースが表示されます。まだ
 
 
 以上です。
+
+---
+参考情報
+- [Azure Machine Learning ワークスペースとは - 関連付けられているリソース](https://docs.microsoft.com/ja-jp/azure/machine-learning/concept-workspace#resources)
+---
 
 <br/>
 

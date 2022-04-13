@@ -27,9 +27,16 @@ Azure Machine Learning Studio (aka Azure ML Studio) のデモンストレーシ�
 
 <img src="../docs/images/azureml-workspace.png" width=500/>
 
+---
+参考情報
+- [Azure Machine Learning スタジオとは](https://docs.microsoft.com/ja-jp/azure/machine-learning/overview-what-is-machine-learning-studio)
+---
+
 <br/>
 
 ### 2. コンピューティングインスタンス (Compute Instance) の作成
+
+> :warning: Azure ML のマネージドな計算環境は Azure のサブスクリプション単位でクオータが設定されています。クオータは利用可能なコア数の設定値です。事前にクオータの値を確認することを推奨します。足りない場合には早めにサポートにリクエストを上げてください。詳細は [Azure Machine Learning を使用するリソースのクォータの管理と引き上げ](https://docs.microsoft.com/ja-JP/azure/machine-learning/how-to-manage-quotas) をご確認ください。
 
 Azure Machine Learning の Compute Instance を起動します。
 
@@ -49,6 +56,10 @@ Jupyter などの開発環境の起動できることを確認します。
 
 <img src="../docs/images/azureml-computeinstance2.png" width=500/>
 
+---
+参考情報
+- [Azure Machine Learning コンピューティング インスタンスとは](https://docs.microsoft.com/ja-jp/azure/machine-learning/concept-compute-instance)
+---
 <br/>
 
 ### 3. コンピューティングクラスター (Compute Clusters) の作成
@@ -64,6 +75,10 @@ Jupyter などの開発環境の起動できることを確認します。
 正常に作成されたことを確認します。<br/>
 <img src="../docs/images/azureml-computeclusters4.png" width=500/><br/>
 
+---
+参考情報
+- [Azure Machine Learning コンピューティング (マネージド)](https://docs.microsoft.com/ja-jp/azure/machine-learning/concept-compute-target#azure-machine-learning-compute-managed)
+---
 
 <br/>
 
@@ -78,6 +93,14 @@ Jupyter などの開発環境の起動できることを確認します。
 
 <img src="../docs/images/azureml-environments-confirm.png" width=500/><br/>
 
+
+> :exclamation: Microsoft 製品における Anaconda のライセンスについては [Anaconda licensing for Microsoft products and services](https://docs.microsoft.com/ja-jp/legal/machine-learning/conda-licensing) を参照ください。
+
+
+---
+参考情報
+- [Azure Machine Learning 環境とは?](https://docs.microsoft.com/ja-jp/azure/machine-learning/concept-environments)
+---
 
 <br/>
 
@@ -97,7 +120,14 @@ Jupyter などの開発環境の起動できることを確認します。
 
 今回のデモンストレーションではデータストア (Datastores) の存在は意識しなくても操作できますが、Azure ML Workspace に新たにデータソースを接続したい場合は理解しておく必要があります。
 
+---
+参考情報
+- [Azure Machine Learning スタジオを使用してデータに接続する](https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-connect-data-ui?tabs=credential)
+- [Azure Machine Learning でのデータ アクセスをセキュリティ保護する](https://docs.microsoft.com/ja-jp/azure/machine-learning/concept-data)
+---
+
 <br/>
+
 
 ### 6. データセット (Datasets) の登録
 モデル学習に必要なデータセット (Datasets) を作成します。
@@ -112,6 +142,12 @@ data フォルダの Titanic.csv データをアップロードします。次�
 正常に登録されていることを確認します。<br/>
 <img src="../docs/images/azureml-dataset4.png" width=900/><br/>
 
+---
+参考情報
+- [Azure Machine Learning スタジオを使用してデータに接続する](https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-connect-data-ui?tabs=credential)
+- [Azure Machine Learning でのデータ アクセスをセキュリティ保護する
+](https://docs.microsoft.com/ja-jp/azure/machine-learning/concept-data)
+---
 
 <br/>
 
@@ -126,6 +162,10 @@ Compute Instance を利用したコードを開発・編集・実行すること
 
 <img src="../docs/images/azureml-notebooks-choose-ide.png" width=500/><br/>
 
+---
+参考情報
+- [ワークスペースで Jupyter Notebook を実行する](https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-run-jupyter-notebooks)
+---
 
 <br/>
 
@@ -213,6 +253,11 @@ Compute Instance を利用したコードを開発・編集・実行すること
 また "使用"タブからは、Python や C# から利用するためのサンプルコードが表示されます。
 
 <img src="../docs/images/azureml-automl-deploy-aci-sample-codes.png" width=500/><br/>
+
+---
+参考情報
+- [スタジオ UI を使用してコード不要の自動 ML トレーニングを設定する](https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-use-automated-ml-for-ml-models)
+---
 
 <br/>
 
@@ -308,6 +353,13 @@ Compute Instance を利用したコードを開発・編集・実行すること
 
 
 以上です。
+
+---
+参考情報
+- [Azure Machine Learning デザイナーとは](https://docs.microsoft.com/ja-jp/azure/machine-learning/concept-designer)
+- [Azure Machine Learning デザイナーのパイプラインとデータセットのサンプル](https://docs.microsoft.com/ja-jp/azure/machine-learning/samples-designer)
+- [チュートリアル:Power BI 統合 - ドラッグ アンド ドロップで予測モデルを作成する (パート 1/2)](https://docs.microsoft.com/ja-jp/azure/machine-learning/tutorial-power-bi-designer-model)
+---
 
 <br/>
 
