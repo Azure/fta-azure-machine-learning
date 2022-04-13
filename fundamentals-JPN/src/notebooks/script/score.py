@@ -1,13 +1,13 @@
-
 import os
 import json
 import numpy as np
 import pandas as pd
 import lightgbm as lgb
 
+
 def data_preprocess(df, categorical_cols, float_cols):
-    df[categorical_cols] = df[categorical_cols].astype('category')
-    df[float_cols] = df[float_cols].astype('float')
+    df[categorical_cols] = df[categorical_cols].astype("category")
+    df[float_cols] = df[float_cols].astype("float")
     return df
 
 
@@ -22,8 +22,8 @@ def init():
 
 
 def run(raw_data):
-    categorical_cols = ['Name', 'Sex', 'Ticket', 'Cabin', 'Embarked']
-    float_cols = ['Pclass', 'Age', 'SibSp', 'Parch', 'Fare']
+    categorical_cols = ["Name", "Sex", "Ticket", "Cabin", "Embarked"]
+    float_cols = ["Pclass", "Age", "SibSp", "Parch", "Fare"]
     columns = bst.feature_name()
     data = np.array(json.loads(raw_data)["data"])
     test_df_original = pd.DataFrame(data=data, columns=columns)
