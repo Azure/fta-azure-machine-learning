@@ -1,3 +1,7 @@
+#### [Prev](../FTA-Live-AzureML-Fundamentals.pdf) | [Home](../README.md)  | [Next](./azureml_studio_walk_through.md)
+
+<br/>
+
 ## Azure Machine Learning サービス作成
 
 Azure Portal を利用した Azure Machine Learning (aka Azure ML) のサービスの作成方法を記載します。
@@ -71,3 +75,7 @@ Azure Machine Learning の作成済みリソースが表示されます。まだ
 
 
 以上です。
+
+<br/>
+
+#### [Prev](../FTA-Live-AzureML-Fundamentals.pdf) | [Home](../README.md)  | [Next](./azureml_studio_walk_through.md)

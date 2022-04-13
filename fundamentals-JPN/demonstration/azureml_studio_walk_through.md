@@ -1,3 +1,7 @@
+#### [Prev](./azure_portal_azureml.md) | [Home](../README.md)  | [Next](./train-notebook.md)
+
+<br/>
+
 ## デモンストレーション : Azure Machine Learning Studio 
 
 Azure Machine Learning Studio (aka Azure ML Studio) のデモンストレーションの手順を記載します。
@@ -304,3 +308,7 @@ Compute Instance を利用したコードを開発・編集・実行すること
 
 
 以上です。
+
+<br/>
+
+#### [Prev](./azure_portal_azureml.md) | [Home](../README.md)  | [Next](./train-notebook.md)
