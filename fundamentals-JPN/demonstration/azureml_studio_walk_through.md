@@ -1,4 +1,4 @@
-#### [Prev](./azure_portal_azureml.md) | [Home](../README.md)  | [Next](./train-notebook.md)
+#### [Prev](./azure_portal_azureml.md) | [Home](../README.md)  | [Next](../src/notebooks/train-notebook.mdsrc/notebook/train-notebook.md)
 
 <br/>
 
@@ -311,4 +311,4 @@ Compute Instance を利用したコードを開発・編集・実行すること
 
 <br/>
 
-#### [Prev](./azure_portal_azureml.md) | [Home](../README.md)  | [Next](./train-notebook.md)
+#### [Prev](./azure_portal_azureml.md) | [Home](../README.md)  | [Next](../src/notebooks/train-notebook.mdsrc/notebook/train-notebook.md)
