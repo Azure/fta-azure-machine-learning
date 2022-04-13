@@ -1,4 +1,4 @@
-#### [Prev](./train-notebook.md) | [Home](../README.md)
+#### [Prev](./train-notebook.md) | [Home](../../README.md)
 
 <br/>
 
@@ -277,4 +277,4 @@ except urllib.error.HTTPError as error:
 
 <br/>
 
-#### [Prev](./train-notebook.md) | [Home](../README.md)
+#### [Prev](./train-notebook.md) | [Home](../../README.md)
