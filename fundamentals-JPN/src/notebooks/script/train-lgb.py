@@ -1,18 +1,15 @@
 # imports
-import os
 import time
 import mlflow
 import argparse
 
-import pandas as pd
 import lightgbm as lgb
-import matplotlib.pyplot as plt
 
 from sklearn.metrics import log_loss, accuracy_score
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 
-from azureml.core import Run, Dataset
+from azureml.core import Run
 
 
 # データ前処理 (データ型変更、特徴量と目的変数の作成、データ分割)
