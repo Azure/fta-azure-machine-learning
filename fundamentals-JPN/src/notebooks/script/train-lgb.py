@@ -1,25 +1,22 @@
- # imports
-import os
+# imports
 import time
 import mlflow
 import argparse
 
-import pandas as pd
 import lightgbm as lgb
-import matplotlib.pyplot as plt
 
 from sklearn.metrics import log_loss, accuracy_score
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 
-from azureml.core import Run, Dataset
+from azureml.core import Run
 
 
 # データ前処理 (データ型変更、特徴量と目的変数の作成、データ分割)
 def preprocess_data(df, categorical_cols, float_cols):
 
-    df[categorical_cols] = df[categorical_cols].astype('category')
-    df[float_cols] = df[float_cols].astype('float')
+    df[categorical_cols] = df[categorical_cols].astype("category")
+    df[float_cols] = df[float_cols].astype("float")
 
     X = df.drop(["Survived", "PassengerId"], axis=1)
     y = df["Survived"]
@@ -35,9 +32,13 @@ def preprocess_data(df, categorical_cols, float_cols):
 
 
 # モデル学習
-def train_model(params, num_boost_round, X_train, X_test, y_train, y_test, categorical_cols):
+def train_model(
+    params, num_boost_round, X_train, X_test, y_train, y_test, categorical_cols
+):
     t1 = time.time()
-    train_data = lgb.Dataset(X_train, label=y_train, categorical_feature=categorical_cols)
+    train_data = lgb.Dataset(
+        X_train, label=y_train, categorical_feature=categorical_cols
+    )
     test_data = lgb.Dataset(X_test, label=y_test, categorical_feature=categorical_cols)
     model = lgb.train(
         params,
@@ -108,13 +109,15 @@ params = {
 }
 
 # 表形式データセット (Dataset) の読み込み
-dataset = run.input_datasets['titanic']
+dataset = run.input_datasets["titanic"]
 df = dataset.to_pandas_dataframe()
 
 # データ前処理
-categorical_cols = ['Name', 'Sex', 'Ticket', 'Cabin', 'Embarked']
-float_cols = ['Pclass', 'Age', 'SibSp', 'Parch', 'Fare']
-X_train, X_test, y_train, y_test, enc, categorical_cols = preprocess_data(df, categorical_cols, float_cols)
+categorical_cols = ["Name", "Sex", "Ticket", "Cabin", "Embarked"]
+float_cols = ["Pclass", "Age", "SibSp", "Parch", "Fare"]
+X_train, X_test, y_train, y_test, enc, categorical_cols = preprocess_data(
+    df, categorical_cols, float_cols
+)
 
 # モデル学習
 model, train_time = train_model(

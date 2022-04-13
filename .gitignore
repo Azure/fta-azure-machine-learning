@@ -3,6 +3,9 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+# AzureML
+.amlignore
+
 # User-specific files
 *.rsuser
 *.suo
@@ -358,3 +361,4 @@ mlruns
 *.amltmp
 .ipynb_aml_checkpoints/
 config.json
+**/*.ipynb_checkpoints/
