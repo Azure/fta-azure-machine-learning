@@ -2,7 +2,6 @@
 
 本ライブセッションでは、[Azure Machine Learning (AzureML)](https://docs.microsoft.com/azure/machine-learning/overview-what-is-azure-machine-learning) の概要を説明し、[AzureML Studio](https://docs.microsoft.com/azure/machine-learning/overview-what-is-machine-learning-studio) の Web ポータル機能や [Azure ML Python SDK](https://docs.microsoft.com/ja-JP/python/api/overview/azure/ml/?view=azure-ml-py) を使って機械学習のプロセスを実行する様子をデモンストレーションを通じて解説します。
 
-コンテンツは [github repository](https://aka.ms/ftalive/azureml/fundamentals) で公開されています。
 
 <br/>
 
