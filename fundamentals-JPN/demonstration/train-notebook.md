@@ -1,3 +1,7 @@
+#### [Prev](./azureml_studio_walk_through.md) | [Home](../README.md)  | [Next](./deploy-notebook.md)
+
+<br/>
+
 # Azure Machine Learning による機械学習プロセス - モデル学習編
 本ノートブックでは、オープンソースライブラリの LightGBM (Python API) を用いたモデルを構築します。各機械学習プロセスを Azure Machine Learning Python SDK を用いて実行します。
 
@@ -29,6 +33,7 @@
 ```python
 # Compute Instances を利用する場合
 from azureml.core import Workspace
+
 ws = Workspace.from_config()
 ```
 
@@ -51,9 +56,9 @@ ws = Workspace.from_config()
 ```python
 # データストア (Datastores) へのアップロード
 datastore = ws.get_default_datastore()
-datastore.upload_files(files=['../data/Titanic.csv'],
-                 target_path='demo',
-                 overwrite=True)
+datastore.upload_files(
+    files=["../data/Titanic.csv"], target_path="demo", overwrite=True
+)
 ```
 
 ## データセット (Datasets) の登録
@@ -64,7 +69,7 @@ datastore.upload_files(files=['../data/Titanic.csv'],
 from azureml.core import Dataset
 
 # データセット (Datasets) の登録
-datastore_paths = [(datastore, 'demo/Titanic.csv')]
+datastore_paths = [(datastore, "demo/Titanic.csv")]
 # 表形式を選択
 titanic_ds = Dataset.Tabular.from_delimited_files(path=datastore_paths)
 titanic_ds.register(ws, "titanic", create_new_version=True)
@@ -83,11 +88,14 @@ Azure Machine Learning Studio にて正常に登録されていることを確�
 
 ```python
 from azureml.core import Environment
+
 environment_name = "lightgbm-python-env"
 pip_file_path = "../environments/requirements.txt"
 conda_file_path = "../environments/conda-env.yml"
-env = Environment.from_conda_specification(name = environment_name, file_path = conda_file_path)
-#env = Environment.from_pip_requirements(name = environment_name, file_path = pip_file_path)
+env = Environment.from_conda_specification(
+    name=environment_name, file_path=conda_file_path
+)
+# env = Environment.from_pip_requirements(name = environment_name, file_path = pip_file_path)
 env.register(ws)
 ```
 
@@ -116,14 +124,15 @@ from azureml.core.compute import ComputeTarget, AmlCompute
 # vnet_name = ""
 # subnet_name = "default"
 
-if compute_name not in ws.compute_targets: # compute_name の名前の Compute Cluster が無ければ...
-    compute_config = AmlCompute.provisioning_configuration(vm_size = "Standard_F4S_V2", 
-                                                           max_nodes=4, 
-                                                           idle_seconds_before_scaledown = 300,
-                                                           #vnet_resourcegroup_name=vnet_resourcegroup_name,
-                                                           #vnet_name=vnet_name,
-                                                           #subnet_name=subnet_name
-                                                           )
+if compute_name not in ws.compute_targets:  # compute_name の名前の Compute Cluster が無ければ...
+    compute_config = AmlCompute.provisioning_configuration(
+        vm_size="Standard_F4S_V2",
+        max_nodes=4,
+        idle_seconds_before_scaledown=300,
+        # vnet_resourcegroup_name=vnet_resourcegroup_name,
+        # vnet_name=vnet_name,
+        # subnet_name=subnet_name
+    )
 
     ct = ComputeTarget.create(ws, compute_name, compute_config)
     ct.wait_for_completion(show_output=True)
@@ -156,7 +165,7 @@ from azureml.core import ScriptRunConfig
 
 script_dir = "script"
 script_name = "train-lgb.py"
-args = ["--input-data", titanic_ds.as_named_input('titanic')]
+args = ["--input-data", titanic_ds.as_named_input("titanic")]
 
 src = ScriptRunConfig(
     source_directory=script_dir,
@@ -206,15 +215,18 @@ Azure Machine Learning Studio にて正常にジョブが実行されたこと�
 
 
 ```python
-from azureml.core import Model
-
 model = run.register_model(
     model_name="ftalive-lgb-model",
     model_framework="LightGBM",
     model_framework_version="3.3.1",
-    tags={'algorithm': 'lightGBM'}, 
-    model_path = 'model')
+    tags={"algorithm": "lightGBM"},
+    model_path="model",
+)
 ```
 
 Azure Machine Learning Studio にて正常に登録されていることを確認します。<br>
 <img src="docs/images/azureml-model2.png" width=500><br>
+
+<br/>
+
+#### [Prev](./azureml_studio_walk_through.md) | [Home](../README.md)  | [Next](./deploy-notebook.md)

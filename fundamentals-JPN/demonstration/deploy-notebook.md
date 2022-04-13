@@ -1,3 +1,7 @@
+#### [Prev](./train-notebook.md) | [Home](../README.md)
+
+<br/>
+
 # Azure Machine Learning による機械学習プロセス - デプロイ編
 
 ## アジェンダ
@@ -28,6 +32,7 @@
 ```python
 # Compute Instances を利用する場合
 from azureml.core import Workspace
+
 ws = Workspace.from_config()
 ```
 
@@ -69,7 +74,7 @@ model = Model(ws, "lgb-model")
 
 ```python
 env = Environment.get(ws, "lightgbm-python-env")
-#env.inferencing_stack_version = 'latest'
+# env.inferencing_stack_version = 'latest'
 ```
 
 
@@ -119,7 +124,9 @@ def run(raw_data):
 
 
 ```python
-inference_config = InferenceConfig(entry_script="score.py", source_directory="script", environment=env)
+inference_config = InferenceConfig(
+    entry_script="score.py", source_directory="script", environment=env
+)
 ```
 
 最初にローカル環境にデプロイをします。
@@ -134,7 +141,7 @@ local_service = Model.deploy(
     models=[model],
     inference_config=inference_config,
     deployment_config=localconfig,
-    overwrite=True
+    overwrite=True,
 )
 ```
 
@@ -145,23 +152,25 @@ local_service = Model.deploy(
 import json
 
 # テストデータ
-data =  {
-            "data": [[
-                2,
-                "Kvillner, Mr. Johan Henrik Johannesson",
-                "male",
-                31,
-                0,
-                0,
-                "C.A. 18723",
-                10.5,
-                "",
-                "S"
-            ]]
-        }
+data = {
+    "data": [
+        [
+            2,
+            "Kvillner, Mr. Johan Henrik Johannesson",
+            "male",
+            31,
+            0,
+            0,
+            "C.A. 18723",
+            10.5,
+            "",
+            "S",
+        ]
+    ]
+}
 
 test_sample = json.dumps(data)
-test_sample = str.encode(test_sample, encoding='utf8')
+test_sample = str.encode(test_sample, encoding="utf8")
 
 prediction = local_service.run(input_data=test_sample)
 print(prediction)
@@ -194,7 +203,7 @@ service = Model.deploy(
     models=[model],
     inference_config=inference_config,
     deployment_config=aciconfig,
-    overwrite=True
+    overwrite=True,
 )
 ```
 
@@ -221,32 +230,32 @@ Azure Machine Learning Studio にて正常に登録されていることを確�
 ```python
 import urllib.request
 import json
-import os
-import ssl
 
 # テストデータ
-data =  {
-            "data": [[
-                2,
-                "Kvillner, Mr. Johan Henrik Johannesson",
-                "male",
-                31,
-                0,
-                0,
-                "C.A. 18723",
-                10.5,
-                "",
-                "S"
-            ]]
-        }
-body = str.encode(json.dumps(data), encoding='utf8')
+data = {
+    "data": [
+        [
+            2,
+            "Kvillner, Mr. Johan Henrik Johannesson",
+            "male",
+            31,
+            0,
+            0,
+            "C.A. 18723",
+            10.5,
+            "",
+            "S",
+        ]
+    ]
+}
+body = str.encode(json.dumps(data), encoding="utf8")
 ```
 
 
 ```python
 url = service.scoring_uri
 key, _ = service.get_keys()
-headers = {'Content-Type':'application/json'}
+headers = {"Content-Type": "application/json"}
 headers["Authorization"] = f"Bearer {key}"
 req = urllib.request.Request(url, body, headers)
 ```
@@ -263,11 +272,15 @@ except urllib.error.HTTPError as error:
 
     # Print the headers - they include the requert ID and the timestamp, which are useful for debugging the failure
     print(error.info())
-    print(json.loads(error.read().decode("utf8", 'ignore')))
-
+    print(json.loads(error.read().decode("utf8", "ignore")))
 ```
 
 
 ```python
 
 ```
+
+
+<br/>
+
+#### [Prev](./train-notebook.md) | [Home](../README.md)
