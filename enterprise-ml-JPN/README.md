@@ -42,17 +42,23 @@
 一般的な推奨事項や実装・構築手順について説明します。
 
 :bulb: Tips <br/>
-その他ポイントとなる機能や技術について説明します。
+その他便利な機能や技術を紹介します。
 
 <br/>
 
-## 変更履歴
+## Contributors
+
+Special thanks to Microsoft Japan CSA AI team for sharing useful slides and information.
+
+<br/>
+
+## Change History
 
 2022/04/27 created by Keita Onabuta
 
 <br/>
 
-## Roadmaps (2022年4月更新)
+## Roadmaps
 
 ### コンテンツ
 #### システム設計 & 構築
@@ -65,3 +71,4 @@
 
 ### Web ページ
 - パワーポイント資料から Markdown ベースの静的サイトへの移行
+- English バージョンのリリース
