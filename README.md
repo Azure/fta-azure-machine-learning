@@ -23,6 +23,7 @@ Please give us your feedback through the [feedback form](https://aka.ms/ftaLive-
 ### For Non-English
 
 - [Azure ML fundamentals (Japanese)](./fundamentals-JPN/)
+- [Azure ML Enterprise Deployment (Japanese)](./enterprise-ml-JPN)
 
 
 ## Contributing
