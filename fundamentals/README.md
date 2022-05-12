@@ -24,7 +24,8 @@ The content of this session is available in our [github repository](https://aka.
 | 14. |  | Samples | Get a sample notebook to get started
 | 15. |  | IntelliSense | Show coding productivity boosters within Notebooks
 | 16. |  | Terminal | Work with terminal and git
-| 17. | AzureML SDK | Working with resources | Manipulate your AzureML workspace with python code
+|     | AzureML SDK (v1) | (Optional) | Attendees can self-practice on the SDK v1 through the provided samples 
+| 17. |  | Working with resources | Manipulate your AzureML workspace with python code
 | 18. |  | Logging metrics | Explore AzureML SDK and MLflow
 | 19. |  | Submit script | Execute code on a remote cluster
 | 20. |  | Environments | Add code dependencies in the executing context
