@@ -2,7 +2,7 @@
 
 AI のテクノロジーが大きな注目を浴びています。画期的で便利な技術が開発される一方で、AI が持つリスクや障害に対応できずに、ガバナンス・セキュリティ・コンプラインスの観点でさまざまな課題が出てきています。そのため、近年はこれまで以上に AI を責任を持って開発し運用管理することが求められています。
 
-本ライブセッションでは Microsoft 社内の取り組みの視点から責任のある AI に対する原則などのコンセプトを紹介し、具体的に機械学習ライフサイクルにおいて責任のある AI に関連にする技術を実装・運用管理する方法を説明します。
+本ライブセッションでは Microsoft 社内の取り組みの視点から、責任のある AI に対する原則などのコンセプトを紹介し、技術的な観点で機械学習ライフサイクルにおいて具体的に責任のある AI を取り入れる方法を説明します。
 
 <br/>
 
@@ -25,7 +25,7 @@ AI のテクノロジーが大きな注目を浴びています。画期的で�
 
 AI の技術が急速に進化しています。AI が人間に近いような能力を保持したり動作をすることや、社会的影響も大きいことから AI システム全体の透明性に対するニーズが高まっています。透明性が無い AI システムはステークホルダーの信頼を失い、AI の社会実装を妨げる一つの大きな要因となります。しかしながら、責任のある AI はまだ十分に浸透しているとは言えません。AI システムのプライバイシーの懸念、誤動作、副作用などの課題に対して、誰が責任を取るのか、どのように対処するのかがルール化されていないことがあります。ここでは、責任のある AI の概念や技術について説明し、皆様の人間中心で信頼された透明性の高い AI システムの構築・運用管理の手助けとなることを目的としています。
 
-"The more powerful the tool, the greater the benefit or damage it can cause ... Technology innovation is not going to slow down. The work to manage it needs to speed up." Brad Smith, President and Chief Legal Officer, Microsoft
+_"The more powerful the tool, the greater the benefit or damage it can cause ... Technology innovation is not going to slow down. The work to manage it needs to speed up." Brad Smith, President and Chief Legal Officer, Microsoft_
 
 <br/>
 
@@ -35,12 +35,12 @@ Microsoft 自身も責任のある AI に取り組んでいます。
 
 <img src='./docs/images/microsoft_rai_journey.png' width=500 />
 
-- 2016年 : Microsoft CEO Satya Nadella が [The Partnership of the Future](https://slate.com/technology/2016/06/microsoft-ceo-satya-nadella-humans-and-a-i-can-work-together-to-solve-societys-challenges.html) という論説を投稿。AI システムの透明性、効率性、プライバシーの尊重、バイアスからの保護などに言及している。
+- 2016年 : Microsoft CEO Satya Nadella が [The Partnership of the Future](https://slate.com/technology/2016/06/microsoft-ceo-satya-nadella-humans-and-a-i-can-work-together-to-solve-societys-challenges.html) という論説を投稿しました。AI システムの透明性、効率性、プライバシーの尊重、バイアスからの保護などに言及しています。
 - 2017年 : Aether (AI, Ethics, and Effects in Engineering and Research) を設立しました。この団体は Microsoft 社内の責任のある AI に関する最高機関になっており、様々な責任のある AI の課題、テクノロジー、プロセス、ベストプラクティスに関する提言を行なっています。
-- 2018年 : [The Future Computed](https://blogs.microsoft.com/blog/2018/01/17/future-computed-artificial-intelligence-role-society/) という書籍を公表しました。AI が社会にもたらす課題、AI をどうすれば責任がある形で開発され、運用されるのか、どのようにガバナンスを制定すればいいのかについて Microsoft の見解を述べているものです。次に説明する 6 つの基本原則についても言及しています。まだ2018年に、顔認証技術の透明や独立した第三者機関によるテストの法規制の必要性を訴えています。
+- 2018年 : [The Future Computed](https://blogs.microsoft.com/blog/2018/01/17/future-computed-artificial-intelligence-role-society/) という書籍を公表しました。AI が社会にもたらす課題、AI をどうすれば責任がある形で開発され、運用されるのか、どのようにガバナンスを制定すればいいのかについて Microsoft の見解を述べているものです。後に説明する 6 つの基本原則についても言及しています。また、顔認証技術の透明や独立した第三者機関によるテストの法規制の必要性を訴えています。
 - 2019年 : Office of Responsible AI を設立しました。ポリシーやガバナンスのプロセスを策定しています。また、Responsible AI Standard (v1) を発行しました。
 - 2020年 : RAISE (Responsible AI Strategy in Engineering) はエンジニアリンググループ全体で責任のある AI のルールとプロセスの実装を促進するために設立されました。
-- 2021年 : Responsible AI Standard (v2) を発行しました。また最近では Microsoft のこれまでの培ってきた知見を社会・お客様に伝えていくべく、[AI Business School](https://www.microsoft.com/ja-JP/ai/ai-business-school) という責任のある AIなどについて学べるビジネス向け学習コンテンツ、ガイドライン、オープンソースのツールを公開しています。
+- 2021年 : Responsible AI Standard (v2) を発行しました。また最近では Microsoft のこれまでの培ってきた知見を社会・お客様に伝えていくべく、[AI Business School](https://www.microsoft.com/ja-JP/ai/ai-business-school) という責任のある AI などについて学べるビジネス向け学習コンテンツ、ガイドライン、オープンソースのツールを公開しています。
 
 <br/>
 
@@ -71,13 +71,13 @@ Microsoft は AI システムの開発および運用管理における責任の
 
 <img src='./docs/images/microsoft_rai_into_practices.png' width=300 />
 
-#### 原則
+#### 原則 (Principles)
 
 先ほど述べた 6 つの原則 (Fairness, Reliability & Safety, Privacy & Security, Inclusiveness, Transparency, Accountability) を指します。
 
 
-#### プラクティス
-最初は、人間中心のデザインに基づくプラクティスです。ソフトウェア開発のライフサイクルにおける問題を予測し、それを解決することで責任のある方法で AI システムを開発することをサポートするガイドラインを提供しています。
+#### プラクティス (Practices)
+人間中心のデザインや、ソフトウェア開発のライフサイクルにおける問題を予測し、それを解決することで責任のある方法で AI システムを開発することをサポートするガイドラインを提供しています。
 
 - [Human-AI Guidelines](https://www.microsoft.com/en-us/haxtoolkit/ai-guidelines/)
     - [Human-AI eXperiences (HAX)](https://www.microsoft.com/en-us/haxtoolkit/) Toolkit に含まれます。
@@ -93,7 +93,7 @@ Microsoft は AI システムの開発および運用管理における責任の
 
 #### ツール
 
-開発チームなどがあらゆる AI の構築・運用のライフサイクルにおいて AI を理解し、保護し、制御するためのツールを開発しています。
+Data Scientist や機械学習エンジニアなどの技術者が AI の構築・運用のライフサイクルの各所において AI を理解し、保護し、制御するためのツールを開発しています。
 
 モデル開発フェーズにおいては、Azure Machine Learning 上であらゆるツールが実行できます。
 
@@ -110,7 +110,7 @@ Microsoft は AI システムの開発および運用管理における責任の
     - ツール : MLOps、監査証跡、データシートなど。
  
 
-責任のある AI に関連したツールの一覧表です。最新の情報は [責任ある AI のリソース](https://www.microsoft.com/ja-JP/ai/responsible-ai-resources) や [Advancing AI trustworthiness: Updates on responsible AI research](https://www.microsoft.com/en-us/research/blog/advancing-ai-trustworthiness-updates-on-responsible-ai-research/) を参照ください。
+※ Microsoft が提供するツールの最新の情報は [責任ある AI のリソース](https://www.microsoft.com/ja-JP/ai/responsible-ai-resources) 、研究開発の取り組みは [Advancing AI trustworthiness: Updates on responsible AI research](https://www.microsoft.com/en-us/research/blog/advancing-ai-trustworthiness-updates-on-responsible-ai-research/) を参照ください。
 
 
 
@@ -155,10 +155,10 @@ Microsoft は Responsible AI Lifecycle (aka RAIL) を開発しました。これ
 
 ## 2. 機械学習モデルを理解する
 
-本モジュールではモデルを理解するための様々な技術を紹介します。Responsible AI Lifecycle の中でも 「 AI システムの設計・構築とドキュメンテーション」のフェーズで利用する技術です。主に透明性と公平性の観点です。
+本モジュールでは、モデルを理解するための様々な技術を紹介します。Responsible AI Lifecycle の中でも 「 AI システムの設計・構築とドキュメンテーション」のフェーズで利用する技術です。主にモデルの透明性と公平性に言及していきます。
 
 - モデルの透明性
-    - 機械学習アルゴリズムの解釈性、または説明可能性の技術より、大域的・局所的なトレンドを理解します。これは AI システムを実装する際に Data Scientist が経営者やステークホルダーにモデルを説明する際に役立ちます。また運用中モデルの挙動について説明が求められるようなシーンでも有効ですし、Data Scientist 自身が開発中の機械学習モデルをデバッグする際にも有効です。
+    - 機械学習アルゴリズムの説明性・解釈可能性の技術より、大域的・局所的なトレンドを理解します。これは AI システムを実装する際に Data Scientist が経営者やステークホルダーにモデルを説明する際に役立ちます。また運用中モデルの挙動について説明が求められるようなシーンでも有効ですし、Data Scientist 自身が開発中の機械学習モデルをデバッグする際にも有効です。
 - モデルの公平性
     - 学習済みモデルの公平性を評価し、必要に応じて軽減を行います。公平性とは特定のグループに対してモデルが他とは異なる挙動しないことを意味します。特にセンシティブな属性 (人種、ジェンダー、年齢、障害の有無 etc) の観点で考慮されます
 
@@ -170,23 +170,14 @@ Microsoft は Responsible AI Lifecycle (aka RAIL) を開発しました。これ
 
 <br/>
 
-ここで登場する主な技術はこちらです。
-
-
-- Fairlearn
-    - 機械学習モデルの公平性の評価と不均衡の軽減・是正を行います。
-- Error Analysis
-    - モデルの誤差を分析し、誤差が大きいコホートを特定します。
-- InterpretML
-    - モデルに説明性を付与します。モデル全体の傾向を見る大域的な説明とテストデータ個々の予測値に対する局所的な説明ができます。
-- Counterfactual Analysis (DiCE)
-    - 最小限度の変化のみで目的変数を変化させる反実仮想のデータを生成します。
-
+ここで登場する主な技術を紹介します。
 
 ### Fairlearn
 <img src='./docs/images/fairlearn.png' width=500 /><br/>
 
-モデルの不公平性な挙動が課題になる場合があります。
+機械学習モデルの公平性の評価と不公平性の緩和を行うライブラリです。
+
+モデルの不公平性は大きく 2 つに分類されます。
 
 - 割り当ての害
     - AI システムによって、特定のグループの機会、リソース、または情報が増減されます。 たとえば、雇用、入学許可、融資などで、モデルにより、特定のグループの人が、他のグループより、適切な候補をうまく選択される場合があります。
@@ -194,7 +185,7 @@ Microsoft は Responsible AI Lifecycle (aka RAIL) を開発しました。これ
     - AI システムによる対応のよさが、ユーザーのグループによって異なります。 たとえば、音声認識システムでは、女性に対する対応が男性より悪くなる場合があります。
 
 
-Fairlearn はこういった危害を評価し、必要に応じて軽減することができます。
+Fairlearn はこういった不公平性の危害を評価し、必要に応じて緩和することができます。
 
 <br/>
 
@@ -214,7 +205,8 @@ Error Analysis はモデルの誤差を深堀り分析するツールです。�
 ### InterpretML
 <img src='./docs/images/interpretml.png' width=500 /><br/>
 
-[InterpretML](https://interpret.ml/) は、主要な「解釈可能性が高い Glassbox なモデル」 と 「任意の学習済みモデルに対する説明性付与手法」が実装されているライブラリ群です。
+[InterpretML](https://interpret.ml/) は、主要な「解釈可能性が高い Glassbox なモデル」 と 「任意の学習済みモデルに対する説明性付与手法」が実装されているライブラリ群です。それぞれに共通してモデル全体の傾向を見る大域的な説明とテストデータ個々の予測値に対する局所的な説明があります。
+
 
 #### Global Surrogate
 
@@ -223,7 +215,7 @@ Error Analysis はモデルの誤差を深堀り分析するツールです。�
 
 #### SHAP
 
-SHAP (SHapley Additive exPlanations) はゲーム理論のシャープレイ値の枠組みを利用して、モデルの種類に関わらず、ここのデータの特徴量ごとの貢献度をみることができます。SHAP 単体でライブラリが公開されています ([github.com/slundberg/SHAP](https://github.com/slundberg/shap))
+[SHAP (SHapley Additive exPlanations)](https://github.com/slundberg/shap) はゲーム理論のシャープレイ値の枠組みを利用して、モデルの種類に関わらず、ここのデータの特徴量ごとの貢献度をみることができます。SHAP 単体でもライブラリが公開されています。
 
 
 <br/>
@@ -232,7 +224,14 @@ SHAP (SHapley Additive exPlanations) はゲーム理論のシャープレイ値�
 
 Explainable Boosting Machines (EBM) は、一般化加法モデル (GAM) に交互作用項を組み込んだモデル (GA2M) を高速に推定するアルゴリズムです。
 
-$$ y =  f(x_1) + f(x_2) + f(x_3) + ... + \Sigma_{ij} f_{ij}(x_i, x_j)  $$
+<!-- $$
+y =  f(x_1) + f(x_2) + f(x_3) + ... + \Sigma_{ij} f_{ij}(x_i, x_j)
+$$ --> 
+
+<!-- it uses [Math >> Image](https://marketplace.visualstudio.com/items?itemName=MeowTeam.vscode-math-to-image) to render math in github markdown. -->
+
+<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=y%20%3D%20%20f(x_1)%20%2B%20f(x_2)%20%2B%20f(x_3)%20%2B%20...%20%2B%20%5CSigma_%7Bij%7D%20f_%7Bij%7D(x_i%2C%20x_j)"></div>
+
 
 それぞれの特徴量 $x_i$ は関数 $f(x_i)$ で表現されています。線形回帰などの線形モデルとは違い目的変数 $y$ との関係性は線形性は前提としていません。この関数を推定する方法はいくつかありますが、EBM ではこの関数をブースティングで推定します。また交互作用項を推定するアルゴリズム (FAST) も実装されており精度向上に寄与しています。
 
@@ -460,7 +459,7 @@ Phase2 で精度と責任ある AI の原則とのトレードオフを考慮し
 
 ## 3. 機械学習モデルとデータを保護する
 
-本モジュールでは機械学習モデルを敵対的攻撃や潜在的な誤用などから保護するための技術を紹介します。差分プライバシーはデータにノイズや乱数を追加することで、データサイエンティストや外部の攻撃者が個々のデータポイントを識別できないようにします。
+本モジュールでは、機械学習モデルを敵対的攻撃や潜在的な誤用などから保護するための技術を紹介します。差分プライバシーはデータにノイズや乱数を追加することで、データサイエンティストや外部の攻撃者が個々のデータポイントを識別できないようにします。
 
 - 意図的な障害
     - 攻撃者は、AI システムの誤分類を発生させたり、個人情報などのプライベートなデータの推測、アルゴリズムの盗みを目的とします。
@@ -494,8 +493,7 @@ Phase2 で精度と責任ある AI の原則とのトレードオフを考慮し
 |DiCE            |[DiCE repo](https://github.com/interpretml/DiCE)    |         |
 |Microsoft Learn |[Discover ways to foster an AI-ready culture in your business](https://docs.microsoft.com/en-us/learn/paths/foster-ai-ready-culture/)||
 |Microsoft Learn |[Identify principles and practices for responsible AI](https://docs.microsoft.com/en-us/learn/paths/responsible-ai-business-principles/)||
-|Microsoft Learn |[Identify guiding principles for responsible AI in government](https://docs.microsoft.com/en-us/learn/paths/responsible-ai-government-principles/)
-||
+|Microsoft Learn |[Identify guiding principles for responsible AI in government](https://docs.microsoft.com/en-us/learn/paths/responsible-ai-government-principles/)||
 |AI Business School |[AI Business School の人工知能コース](https://www.microsoft.com/ja-jp/ai/ai-business-school?rtc=1)||
 
 
