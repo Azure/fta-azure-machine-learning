@@ -425,8 +425,7 @@ FairnessDashboard(
 
 オレンジ色にハイライトされているモデルが軽減前のモデルです。ダッシュボードで精度で公平性のトレードオフを確認し、採用するモデルを決めていきます。
 
-<img src='./docs/images/fairlearn_mitigate_dpratio
-.png' width=500 />
+<img src='./docs/images/fairlearn_mitigate_dpratio.png' width=500 />
 
 
 <br/>
