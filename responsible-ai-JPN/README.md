@@ -7,10 +7,10 @@ AI のテクノロジーが大きな注目を浴びています。画期的で�
 <br/>
 
 ## アジェンダ
-1. 責任のある AI 概要
-2. 機械学習モデルを理解する
-3. 機械学習モデルとデータを保護する
-4. 参考情報
+1. [責任のある AI 概要](#1-責任のある-ai-概要)
+2. [機械学習モデルを理解する](#2-機械学習モデルを理解する)
+3. [機械学習モデルとデータを保護する](#3-機械学習モデルとデータを保護する)
+4. [参考情報](#4-参考資料)
 
 <br/>
 
@@ -35,12 +35,12 @@ Microsoft 自身も責任のある AI に取り組んでいます。
 
 <img src='./docs/images/microsoft_rai_journey.png' width=500 />
 
-- 2016年 : Microsoft CEO Satya Nadella が "The Partnership of the Future" という論説を投稿。AI システムの透明性、効率性、プライバシーの尊重、バイアスからの保護などに言及している。
+- 2016年 : Microsoft CEO Satya Nadella が [The Partnership of the Future](https://slate.com/technology/2016/06/microsoft-ceo-satya-nadella-humans-and-a-i-can-work-together-to-solve-societys-challenges.html) という論説を投稿。AI システムの透明性、効率性、プライバシーの尊重、バイアスからの保護などに言及している。
 - 2017年 : Aether (AI, Ethics, and Effects in Engineering and Research) を設立しました。この団体は Microsoft 社内の責任のある AI に関する最高機関になっており、様々な責任のある AI の課題、テクノロジー、プロセス、ベストプラクティスに関する提言を行なっています。
 - 2018年 : [The Future Computed](https://blogs.microsoft.com/blog/2018/01/17/future-computed-artificial-intelligence-role-society/) という書籍を公表しました。AI が社会にもたらす課題、AI をどうすれば責任がある形で開発され、運用されるのか、どのようにガバナンスを制定すればいいのかについて Microsoft の見解を述べているものです。次に説明する 6 つの基本原則についても言及しています。まだ2018年に、顔認証技術の透明や独立した第三者機関によるテストの法規制の必要性を訴えています。
 - 2019年 : Office of Responsible AI を設立しました。ポリシーやガバナンスのプロセスを策定しています。また、Responsible AI Standard (v1) を発行しました。
 - 2020年 : RAISE (Responsible AI Strategy in Engineering) はエンジニアリンググループ全体で責任のある AI のルールとプロセスの実装を促進するために設立されました。
-- 2021年 : Responsible AI Standard (v2) を発行しました。また最近では Microsoft のこれまでの培ってきた知見を社会・お客様に伝えていくべく、[AI Business School(https://www.microsoft.com/ja-JP/ai/ai-business-school) という責任のある AIなどについて学べるビジネス向け学習コンテンツ、ガイドライン、オープンソースのツールを公開しています。
+- 2021年 : Responsible AI Standard (v2) を発行しました。また最近では Microsoft のこれまでの培ってきた知見を社会・お客様に伝えていくべく、[AI Business School](https://www.microsoft.com/ja-JP/ai/ai-business-school) という責任のある AIなどについて学べるビジネス向け学習コンテンツ、ガイドライン、オープンソースのツールを公開しています。
 
 <br/>
 
@@ -54,7 +54,7 @@ Microsoft は AI システムの開発および運用管理における責任の
 - 公平性 (Fairness)
     - AI システムは全ての人を公平に扱い、同じ属性・状況の人たちに対して異なる影響を与えることを回避する必要があります。
 - 信頼性と安全性 (Reliability & Safety)
-    - AI システムは信頼性が高く安全である必要があります。設計されたとおりに動作し、新しい状況にも安全に対応できるようにすることが重要です。｀
+    - AI システムは信頼性が高く安全である必要があります。設計されたとおりに動作し、新しい状況にも安全に対応できるようにすることが重要です。
 - プライバシーとセキュリティ (Privacy & Security)
     - AI システムではデータを扱うためプライバシーとセキュリティの保護が必要です。
 - 包括性 (Inclusiveness)
@@ -71,12 +71,16 @@ Microsoft は AI システムの開発および運用管理における責任の
 
 <img src='./docs/images/microsoft_rai_into_practices.png' width=300 />
 
+#### 原則
+
+先ほど述べた 6 つの原則 (Fairness, Reliability & Safety, Privacy & Security, Inclusiveness, Transparency, Accountability) を指します。
+
 
 #### プラクティス
 最初は、人間中心のデザインに基づくプラクティスです。ソフトウェア開発のライフサイクルにおける問題を予測し、それを解決することで責任のある方法で AI システムを開発することをサポートするガイドラインを提供しています。
 
 - [Human-AI Guidelines](https://www.microsoft.com/en-us/haxtoolkit/ai-guidelines/)
-    - これは [Human-AI eXperiences (HAX)](https://www.microsoft.com/en-us/haxtoolkit/) Toolkit に含まれます。
+    - [Human-AI eXperiences (HAX)](https://www.microsoft.com/en-us/haxtoolkit/) Toolkit に含まれます。
 - [Conversational AI Guidelines](https://www.microsoft.com/en-us/research/publication/responsible-bots/)
 - [Inclusive Design Guidelines](https://www.microsoft.com/design/inclusive/)
 - [AI Fairness Checklist](https://www.microsoft.com/en-us/research/project/ai-fairness-checklist/)
