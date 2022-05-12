@@ -245,12 +245,12 @@ $$ -->
 <br/>
 
 ### デモンストレーションのシナリオ
-ローンの履行・不履行を予測するモデルを作成するシナリオで責任のある AI を考慮した AI システムを構築していきます。UCI Adault Dataset を用いた擬似データを利用します。
+ローンの履行・不履行を予測するモデルを作成するシナリオで責任のある AI を考慮した AI システムを構築していきます。[UCI Adault Dataset](https://archive.ics.uci.edu/ml/datasets/adult) を用いた擬似データを利用します。
 
 
 ### Phase1 : AI システムの評価と準備
 
-このフェーズでは、AI システムの要件を整理し、責任のある形でシステムが構築可能かどうかの検証を行い、潜在的なリスクを洗い出し、必要に応じてリスクを緩和する方法を考えます。下記の質問に回答してみてください。
+このフェーズでは、AI システムの要件を整理し、責任のある形でシステムが構築可能かどうかの検証を行い、潜在的なリスクを洗い出し、必要に応じてリスクを緩和する方法を考えます。下記の質問に回答してみます。
 
 > AI/ML の技術が本当に必要か？
 > 潜在的なリスクがあるか？それはどのようなものか？
@@ -258,9 +258,11 @@ $$ -->
 
 以上の情報をベースに AI システムが抱えるリスクと利益 (ステークホルダーの誰が得をして、誰が損害を被る可能性があるか etc)、リスクに対する軽減策と残存するリスク、公平性、セキュリティ、プライバシーの影響などに関して、必要に応じてテストを行い、ドキュメントを作成します。
 
+Microsoft は [Harms Modeling (損害のモデル化)](https://docs.microsoft.com/en-us/azure/architecture/guide/responsible-innovation/harms-modeling/) に関するドキュメントを公開しています。信頼される AI システムの構築にはあらゆるステークホルダーの価値観や利益の観点での評価が必要であり、下記のようなプロセスを提示しています。
+
 <img src='https://docs.microsoft.com/en-us/azure/architecture/guide/responsible-innovation/images/stakeholder-process-table.png' width=500 />
 
-例えば今回のシナリオで AI システムはローンの審査で利用され、適切なモデルであればローン申込者や銀行へ利益をもたらしますが、AI システムが誤った or 想定とは異なる挙動を起こし、返済不可能な債務を抱える人・企業が増えてしまえば、社会的影響は大きくなる可能性があります。
+例えば、今回のシナリオで AI システムはローンの審査で利用され、適切なモデルであればローン申込者や銀行へ利益をもたらしますが、AI システムが誤った or 想定とは異なる挙動を起こし、返済不可能な債務を抱える人・企業が増えてしまえば、社会的影響は大きくなる可能性があります。
 
 このような損害 (Harms) はさまざまな種類があります。次のフェーズに入る前に AI システムがそれぞれの損害の種類に該当するのかどうか、該当する場合の損害の大きさを評価します。
 
@@ -273,16 +275,12 @@ $$ -->
 近年 Data-centric AI というフレーズが出てきているようにデータの品質が AI システムに大きな影響を与えるため、データの詳細な情報をドキュメントに残しておくことが重要です。[Datasheets for Datasets](https://www.microsoft.com/en-us/research/project/datasheets-for-datasets/) ([Template](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4t8QB)) を利用することで、データの透明性と信頼性を高め、ステークホルダー間のコミュニケーションを促進します。
 
 
-次にモデル構築を進めていきます。最初のモデル構築は勾配ブースティングのライブラリ CatBoost を用います。
+次にモデル構築を進めていきます。最初のモデル構築は勾配ブースティングのライブラリ CatBoost を用います。その後、解釈可能性の高いモデルである一般化加法モデルを Explainable Boosting Machine (aka EBM) を用いて構築します。また、構築済みの CatBoost のモデルに InterpretML を利用して説明性を付与します。
+
+最後は FairLearn を用いて公平性の評価を行い、不公平性を緩和する処置を行います。
 
 
-次に解釈可能性の高いモデルである一般化加法モデルを Explainable Boosting Machine (aka EBM) を用いて構築します。
-
-
-次に最初に構築した CatBoost に InterpretML を利用して説明性を付与します。また、FairLearn を用いて公平性の評価を行い、不公平性を軽減する処置を行います。
-
-
-最初に CatBoost のモデルを構築します。
+それではまず最初に CatBoost のモデルを構築します。
 
 ```python
 from catboost import CatBoostClassifier
@@ -313,6 +311,8 @@ ebm_predictor.fit(X_train, Y_train)
 
 <img src='./docs/images/ebm_global.png' width=500 />
 <img src='./docs/images/ebm_global_age.png' width=500 />
+
+交互作用項のアウトプットを確認します。
 <img src='./docs/images/ebm_global_interaction.png' width=500 />
 
 <br/>
@@ -324,12 +324,9 @@ ebm_predictor.fit(X_train, Y_train)
 from raiwidgets import ExplanationDashboard
 from interpret.ext.blackbox import TabularExplainer
 
-# explain predictions on your local machine
-# "features" and "classes" fields are optional
 explainer = TabularExplainer(catboost_predictor, 
                              X_train)
 
-# explain overall model predictions (global explanation)
 global_explanation = explainer.explain_global(X_test)
 
 ExplanationDashboard(global_explanation, catboost_predictor, dataset=X_test, true_y=Y_test)
@@ -338,7 +335,7 @@ ExplanationDashboard(global_explanation, catboost_predictor, dataset=X_test, tru
 <img src='./docs/images/interpretml_dashboard.png' width=500 />
 
 
-誤差分析を行います。
+誤差分析を行い、誤差の大きいコホートを特定します。
 
 ```python
 from raiwidgets import ErrorAnalysisDashboard
