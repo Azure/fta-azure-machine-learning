@@ -217,6 +217,19 @@ Error Analysis はモデルの誤差を深堀り分析するツールです。�
 
 [SHAP (SHapley Additive exPlanations)](https://github.com/slundberg/shap) はゲーム理論のシャープレイ値の枠組みを利用して、モデルの種類に関わらず、ここのデータの特徴量ごとの貢献度をみることができます。SHAP 単体でもライブラリが公開されています。
 
+<br/>
+
+### Responsible AI Toolbox
+
+<img src='./docs/images/raitoolbox.png' width=500 /><br/>
+
+
+モデルの説明性付与、誤差分析、データ可視化、反事仮想分析、因果推論の機能をより簡単にスムーズに利用するために Responsible AI Toolbox という統合されたダッシュボードを提供しています。モデルをデバッグする機能と意思決定をサポートする機能の 2 つを提供しています。
+
+
+<img src='https://techcommunity.microsoft.com/t5/image/serverpage/image-id/331674i5FBF69F2E05F85A3/image-size/medium?v=v2&px=400' width=300 /><br/>
+
+
 
 <br/>
 
