@@ -37,7 +37,7 @@ Microsoft 自身も責任のある AI に取り組んでいます。
 
 - 2016年 : Microsoft CEO Satya Nadella が [The Partnership of the Future](https://slate.com/technology/2016/06/microsoft-ceo-satya-nadella-humans-and-a-i-can-work-together-to-solve-societys-challenges.html) という論説を投稿しました。AI システムの透明性、効率性、プライバシーの尊重、バイアスからの保護などに言及しています。
 - 2017年 : Aether (AI, Ethics, and Effects in Engineering and Research) を設立しました。この団体は Microsoft 社内の責任のある AI に関する最高機関になっており、様々な責任のある AI の課題、テクノロジー、プロセス、ベストプラクティスに関する提言を行なっています。
-- 2018年 : [The Future Computed](https://blogs.microsoft.com/blog/2018/01/17/future-computed-artificial-intelligence-role-society/) という書籍を公表しました。AI が社会にもたらす課題、AI をどうすれば責任がある形で開発され、運用されるのか、どのようにガバナンスを制定すればいいのかについて Microsoft の見解を述べているものです。後に説明する 6 つの基本原則についても言及しています。また、顔認証技術の透明や独立した第三者機関によるテストの法規制の必要性を訴えています。
+- 2018年 : [The Future Computed](https://news.microsoft.com/ja-jp/2018/01/24/180117-future-computed-artificial-intelligence-role-society/) という書籍を公表しました。AI が社会にもたらす課題、AI をどうすれば責任がある形で開発され、運用されるのか、どのようにガバナンスを制定すればいいのかについて Microsoft の見解を述べているものです。後に説明する 6 つの基本原則についても言及しています。また、顔認証技術の透明や独立した第三者機関によるテストの法規制の必要性を訴えています。
 - 2019年 : Office of Responsible AI を設立しました。ポリシーやガバナンスのプロセスを策定しています。また、Responsible AI Standard (v1) を発行しました。
 - 2020年 : RAISE (Responsible AI Strategy in Engineering) はエンジニアリンググループ全体で責任のある AI のルールとプロセスの実装を促進するために設立されました。
 - 2021年 : Responsible AI Standard (v2) を発行しました。また最近では Microsoft のこれまでの培ってきた知見を社会・お客様に伝えていくべく、[AI Business School](https://www.microsoft.com/ja-JP/ai/ai-business-school) という責任のある AI などについて学べるビジネス向け学習コンテンツ、ガイドライン、オープンソースのツールを公開しています。
@@ -130,7 +130,7 @@ Microsoft は Hub and Spokes モデルでガバナンスの体制を構築して
 - RAISE (Responsible AI Strategy in Engineering)
     - エンジニアリンググループにおける責任のある AI のルールの策定、システム戦略、プロセスの実装を実行します。
 - Responsible AI Champs
-    - Responsible AI Champs はスポークの役割を果たし、組織全体にわたるルールの実装や、認知度の向上をサポートします。お客様や社内におけるセンシティブなユースケースに対するアドバイザリーを行なったり、
+    - Responsible AI Champs はスポークの役割を果たし、組織全体にわたるルールの実装や、認知度の向上をサポートします。お客様や社内におけるセンシティブなユースケースに対するアドバイザリーを行なっています。
 
 
 <br/>
@@ -181,7 +181,7 @@ Microsoft は Responsible AI Lifecycle (aka RAIL) を開発しました。これ
 
 - 割り当ての害
     - AI システムによって、特定のグループの機会、リソース、または情報が増減されます。 たとえば、雇用、入学許可、融資などで、モデルにより、特定のグループの人が、他のグループより、適切な候補をうまく選択される場合があります。
-- サービス品質の買
+- サービス品質の害
     - AI システムによる対応のよさが、ユーザーのグループによって異なります。 たとえば、音声認識システムでは、女性に対する対応が男性より悪くなる場合があります。
 
 
@@ -205,7 +205,7 @@ Error Analysis はモデルの誤差を深堀り分析するツールです。�
 ### InterpretML
 <img src='./docs/images/interpretml.png' width=500 /><br/>
 
-[InterpretML](https://interpret.ml/) は、主要な「解釈可能性が高い Glassbox なモデル」 と 「任意の学習済みモデルに対する説明性付与手法」が実装されているライブラリ群です。それぞれに共通してモデル全体の傾向を見る大域的な説明とテストデータ個々の予測値に対する局所的な説明があります。
+[InterpretML](https://interpret.ml/) は、主要な「解釈可能性が高い Glass-box なモデル」 と 「任意の学習済みモデル (Black-box) に対する説明性付与手法」が実装されているライブラリ群です。それぞれに共通してモデル全体の傾向を見る大域的な説明とテストデータ個々の予測値に対する局所的な説明があります。
 
 
 #### Global Surrogate
@@ -258,11 +258,13 @@ $$ -->
 
 以上の情報をベースに AI システムが抱えるリスクと利益 (ステークホルダーの誰が得をして、誰が損害を被る可能性があるか etc)、リスクに対する軽減策と残存するリスク、公平性、セキュリティ、プライバシーの影響などに関して、必要に応じてテストを行い、ドキュメントを作成します。
 
+例えば、今回のシナリオで AI システムはローンの審査で利用され、適切なモデルであればローン申込者や銀行へ利益をもたらしますが、仮に AI システムが誤った or 想定とは異なる挙動を起こしてしまい、返済不可能な債務を抱える人・企業が増えてしまえば、社会的影響は大きくなる可能性があります。
+
+
 Microsoft は [Harms Modeling (損害のモデル化)](https://docs.microsoft.com/en-us/azure/architecture/guide/responsible-innovation/harms-modeling/) に関するドキュメントを公開しています。信頼される AI システムの構築にはあらゆるステークホルダーの価値観や利益の観点での評価が必要であり、下記のようなプロセスを提示しています。
 
 <img src='https://docs.microsoft.com/en-us/azure/architecture/guide/responsible-innovation/images/stakeholder-process-table.png' width=500 />
 
-例えば、今回のシナリオで AI システムはローンの審査で利用され、適切なモデルであればローン申込者や銀行へ利益をもたらしますが、AI システムが誤った or 想定とは異なる挙動を起こし、返済不可能な債務を抱える人・企業が増えてしまえば、社会的影響は大きくなる可能性があります。
 
 このような損害 (Harms) はさまざまな種類があります。次のフェーズに入る前に AI システムがそれぞれの損害の種類に該当するのかどうか、該当する場合の損害の大きさを評価します。
 
@@ -272,10 +274,12 @@ Microsoft は [Harms Modeling (損害のモデル化)](https://docs.microsoft.co
 
 ### Phase2 : AI システムの設計・構築と文章化
 
-近年 Data-centric AI というフレーズが出てきているようにデータの品質が AI システムに大きな影響を与えるため、データの詳細な情報をドキュメントに残しておくことが重要です。[Datasheets for Datasets](https://www.microsoft.com/en-us/research/project/datasheets-for-datasets/) ([Template](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4t8QB)) を利用することで、データの透明性と信頼性を高め、ステークホルダー間のコミュニケーションを促進します。
+#### データ準備
+データの品質が AI システムに大きな影響を与えるため、データの詳細な情報をドキュメントに残しておくことが重要です。[Datasheets for Datasets](https://www.microsoft.com/en-us/research/project/datasheets-for-datasets/) ([Template](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4t8QB)) を利用することで、データの透明性と信頼性を高め、ステークホルダー間のコミュニケーションを促進します。
 
+#### モデル構築
 
-次にモデル構築を進めていきます。最初のモデル構築は勾配ブースティングのライブラリ CatBoost を用います。その後、解釈可能性の高いモデルである一般化加法モデルを Explainable Boosting Machine (aka EBM) を用いて構築します。また、構築済みの CatBoost のモデルに InterpretML を利用して説明性を付与します。
+次にモデル構築を進めていきます。最初のモデル構築は勾配ブースティングのライブラリ [CatBoost](https://catboost.ai/) を用います。その後、解釈可能性の高いモデルである一般化加法モデルを Explainable Boosting Machine (aka EBM) を用いて構築します。また、構築済みの CatBoost のモデルに InterpretML を利用して説明性を付与します。
 
 最後は FairLearn を用いて公平性の評価を行い、不公平性を緩和する処置を行います。
 
@@ -310,9 +314,10 @@ ebm_predictor.fit(X_train, Y_train)
 各変数の貢献度や推定された関数を確認します。
 
 <img src='./docs/images/ebm_global.png' width=500 />
-<img src='./docs/images/ebm_global_age.png' width=500 />
+<img src='./docs/images/ebm_global_age.png' width=500 /><br/>
 
 交互作用項のアウトプットを確認します。
+
 <img src='./docs/images/ebm_global_interaction.png' width=500 />
 
 <br/>
