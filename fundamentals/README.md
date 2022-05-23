@@ -19,12 +19,13 @@ The content of this session is available in our [github repository](https://aka.
 | 09. |  | Model explanation | Get insights on [how the trained model works](https://interpret.ml/) and the [Responsible AI toolbox](https://responsibleaitoolbox.ai/)
 | 10. | Model deployment | Deploy to ACI | Deploy a real time inference endpoint into Azure Container Instance
 | 11. | | Model registry | Review artifacts stored
-| 12. | | Real time endpoints | Review swagger.json and [test](https://reqbin.com/jpipz03n) the ACI endpoint
+| 12. | | Real time endpoints | Review swagger.json and [test](https://reqbin.com/etrbvco6) the ACI endpoint
 | 13. | Notebooks | Folder structure | Review where notebooks are saved
 | 14. |  | Samples | Get a sample notebook to get started
 | 15. |  | IntelliSense | Show coding productivity boosters within Notebooks
 | 16. |  | Terminal | Work with terminal and git
-| 17. | AzureML SDK | Working with resources | Manipulate your AzureML workspace with python code
+|     | AzureML SDK (v1) | (Optional) | Attendees can self-practice on the SDK v1 through the provided samples 
+| 17. |  | Working with resources | Manipulate your AzureML workspace with python code
 | 18. |  | Logging metrics | Explore AzureML SDK and MLflow
 | 19. |  | Submit script | Execute code on a remote cluster
 | 20. |  | Environments | Add code dependencies in the executing context
