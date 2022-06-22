@@ -93,6 +93,7 @@ jobs:
     - name: Install dependencies
       run: |
         pip install azureml-sdk pandas sklearn azureml-mlflow mlflow pytest ipykernel nbmake
+        pip install -pre azure-ai-ml
         python -m ipykernel install --user --name python3-azureml
     - name: Test notebooks
       run: |
