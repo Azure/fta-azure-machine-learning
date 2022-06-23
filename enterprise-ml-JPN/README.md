@@ -36,6 +36,8 @@
 - Azure Machine Learning のシステム構築と運用管理を担当される方
 - (可能であれば) Azure Machine Learning の基本的な機能をご理解いただいている方
 
+<br />
+
 ## 各セクションの構成
 
 :book:  基礎知識 <br/>
@@ -52,12 +54,6 @@
 
 <br/>
 
-## Contributors
-
-Special thanks to Microsoft Japan CSA AI team for sharing useful slides and information.
-
-<br/>
-
 ## Change History
 
 - 2022/04/27 created by Keita Onabuta
@@ -68,14 +64,19 @@ Special thanks to Microsoft Japan CSA AI team for sharing useful slides and info
 ## Roadmaps
 
 ### コンテンツ
+
 #### システム設計 & 構築
 - Azure Arc トピック追加
-#### アプリケーション設計 & 構築
-- デプロイ・推論環境のセクション新規作成
-- MLOps コンテンツの拡充
-- 責任のある AI コンテンツの拡充
-
 
 ### Web ページ
 - パワーポイント資料から Markdown ベースの静的サイトへの移行
-- English バージョンのリリース
+    - English バージョンのリリース
+
+
+
+## Contributors and References
+
+Special thanks to Microsoft Japan CSA AI team for sharing useful slides and information internally. 
+And please see acknowledgements in ths [ACKNOWLEDGEMENT.md](./ACKNOWLEDGEMENT.md) file.
+
+<br/>
