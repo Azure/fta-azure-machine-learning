@@ -30,6 +30,12 @@
 
 <br/>
 
+## 本イベントの対象
+
+- Azure の基本的な仕組みをご理解いただいている方
+- Azure Machine Learning のシステム構築と運用管理を担当される方
+- (可能であれば) Azure Machine Learning の基本的な機能をご理解いただいている方
+
 ## 各セクションの構成
 
 :book:  基礎知識 <br/>
@@ -54,8 +60,8 @@ Special thanks to Microsoft Japan CSA AI team for sharing useful slides and info
 
 ## Change History
 
-2022/04/27 created by Keita Onabuta
-2022/06/23 updated by Keita Onabuta
+- 2022/04/27 created by Keita Onabuta
+- 2022/06/23 updated by Keita Onabuta
 
 <br/>
 
