@@ -55,6 +55,7 @@ Special thanks to Microsoft Japan CSA AI team for sharing useful slides and info
 ## Change History
 
 2022/04/27 created by Keita Onabuta
+2022/06/23 updated by Keita Onabuta
 
 <br/>
 
