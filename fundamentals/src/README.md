@@ -39,7 +39,7 @@ You can potentially test that all notebooks work well from your local computer.
 - Create a `conda` environment with all required packages.
 
   ```bash
-  conda create -n test-notebooks python=3.6 pytest ipykernel
+  conda create -n test-notebooks python=3.8 pytest ipykernel -y
   conda activate test-notebooks
   pip install azureml-sdk pandas sklearn azureml-mlflow mlflow nbmake
   python -m ipykernel install --user --name python3-azureml
@@ -50,6 +50,7 @@ You can potentially test that all notebooks work well from your local computer.
 - Run all notebooks.
 
   ```bash
+  cd notebooks
   pytest --nbmake
   ```
 
