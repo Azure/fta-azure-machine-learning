@@ -34,34 +34,33 @@ Microsoft also use AI technologies and works on Responsible AI.
 
 <img src='./docs/images/microsoft_rai_journey.png' width=500 />
 
-- 2016年 : Microsoft CEO Satya Nadella が [The Partnership of the Future](https://slate.com/technology/2016/06/microsoft-ceo-satya-nadella-humans-and-a-i-can-work-together-to-solve-societys-challenges.html) という論説を投稿しました。AI システムの透明性、効率性、プライバシーの尊重、バイアスからの保護などに言及しています。
-- 2017年 : Aether (AI, Ethics, and Effects in Engineering and Research) を設立しました。この団体は Microsoft 社内の責任のある AI に関する最高機関になっており、様々な責任のある AI の課題、テクノロジー、プロセス、ベストプラクティスに関する提言を行なっています。
-- 2018年 : [The Future Computed](https://news.microsoft.com/ja-jp/2018/01/24/180117-future-computed-artificial-intelligence-role-society/) という書籍を公表しました。AI が社会にもたらす課題、AI をどうすれば責任がある形で開発され、運用されるのか、どのようにガバナンスを制定すればいいのかについて Microsoft の見解を述べているものです。後に説明する 6 つの基本原則についても言及しています。また、顔認証技術の透明や独立した第三者機関によるテストの法規制の必要性を訴えています。
-- 2019年 : Office of Responsible AI を設立しました。ポリシーやガバナンスのプロセスを策定しています。また、Responsible AI Standard (v1) を発行しました。
-- 2020年 : RAISE (Responsible AI Strategy in Engineering) はエンジニアリンググループ全体で責任のある AI のルールとプロセスの実装を促進するために設立されました。
-- 2021年 : Responsible AI Standard (v2) を発行しました。また最近では Microsoft のこれまでの培ってきた知見を社会・お客様に伝えていくべく、[AI Business School](https://www.microsoft.com/ja-JP/ai/ai-business-school) という責任のある AI などについて学べるビジネス向け学習コンテンツ、ガイドライン、オープンソースのツールを公開しています。
+- 2016 : Microsoft CEO Satya Nadella posted an article to [The Partnership of the Future](https://slate.com/technology/2016/06/microsoft-ceo-satya-nadella-humans-and-a-i-can-work-together-to-solve-societys-challenges.html) which talks about transparency, privacy, bias etc.
+- 2017 : Microsoft created Responsible AI advisory committee called Aether (AI, Ethics, and Effects in Engineering and Research). This committee serves an advisory role to the senior leadership and the Office of Responsible AI on questions, challenges and opportunities with the development and fielding of AI technologies. Aether also provides guidance to teams across the company to ensure that AI products and services are aligned with our AI principles.
+- 2018 : Microsoft published [The Future Computed](https://news.microsoft.com/en-US/2018/01/24/180117-future-computed-artificial-intelligence-role-society/) which talks Microsoft views about the challenges of AI influence to society, how to develop and manage AI in a responsible way, how to govern its use. And it also describes about Microsoft's six principles for the responsible development and management of AI.
+- 2019 : Office of Responsible AI was established。They administer, implement and maintain Responsible AI policy and governance. And they published Responsible AI Standard (v1).
+- 2020 : RAISE (Responsible AI Strategy in Engineering) was established to enable the implementation of Microsoft Responsible AI rules and process across its engineering groups.
+- 2021 : Responsible AI Standard (v2) was published. And recently Microsoft published [AI Business School](https://www.microsoft.com/en-US/ai/ai-business-school) to share what Microsoft is learning in AI journey, guidelines, tools and additional resources that will help you create a Responsible AI solution.
 
 <br/>
 
-### 責任のある AI の 6 つの原則
+### Microsoft Responsible AI principles
 
-Microsoft は AI システムの開発および運用管理における責任のある AI の原則を 6 つ定義しています。
-
+Microsoft defines the principles for development and management AI.
 <img src='./docs/images/microsoft_rai_principles.png' width=500 /><br/>
 
 
-- 公平性 (Fairness)
-    - AI システムは全ての人を公平に扱い、同じ属性・状況の人たちに対して異なる影響を与えることを回避する必要があります。
-- 信頼性と安全性 (Reliability & Safety)
-    - AI システムは信頼性が高く安全である必要があります。設計されたとおりに動作し、新しい状況にも安全に対応できるようにすることが重要です。
-- プライバシーとセキュリティ (Privacy & Security)
-    - AI システムではデータを扱うためプライバシーとセキュリティの保護が必要です。
-- 包括性 (Inclusiveness)
-    - AI システムに限らず技術は全ての人にもたらされるべきで、様々なニーズに対応していく必要があります。
-- 透明性 (Transparency)
-    - AI システムが意思決定に利用される場面などでは、どのように AI システムが決定を行ったのかを理解することが重要です。
-- アカウンタビリティ (Accountability)
-    - AI システムを設計・構築・運用管理する人は、システムがどのように動作するかについて説明責任があります。
+- Fairness'
+    - AI systems should treat all people fairly.
+- Reliability & Safety
+    - AI systems should perform reliably and safely.
+- Privacy & Security
+    - AI systems should be secure and respect privacy.
+- Inclusiveness
+    - AI systems should empower everyone and engage people.
+- Transparency
+    - AI systems should be understandable.
+- Accountability
+    - People should be accountable for AI systems.
 
 
 ### 責任のある AI の実践
