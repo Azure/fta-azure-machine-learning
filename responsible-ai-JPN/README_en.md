@@ -487,7 +487,7 @@ Phase2 で精度と責任ある AI の原則とのトレードオフを考慮し
 
 ### Confidential Computing
 
-[Azure Confidential Computing](https://azure.microsoft.com/ja-jp/solutions/confidential-compute/) を利用して Azure 上で機密データの処理を安全に行うことができます。Azure 内部ではデフォルトで Microsoft がデータを暗号化していますが、Microsoft がそのデータにアクセスしないことを確認するのは難しいことです。また機密データに対する攻撃者の手法も多様化しています。Azure Confidential Computing は使用中のデータ (Data In Use) を TEE (Trusted Execution Environments) を利用して保護します。現在は Intel SGX、AMD SEV-SNP、また Nvidia A100 GPUs with APM (Private Preview) が利用できます。
+[Azure Confidential Computing](https://azure.microsoft.com/en-US/solutions/confidential-compute/) を利用して Azure 上で機密データの処理を安全に行うことができます。Azure 内部ではデフォルトで Microsoft がデータを暗号化していますが、Microsoft がそのデータにアクセスしないことを確認するのは難しいことです。また機密データに対する攻撃者の手法も多様化しています。Azure Confidential Computing は使用中のデータ (Data In Use) を TEE (Trusted Execution Environments) を利用して保護します。現在は Intel SGX、AMD SEV-SNP、また Nvidia A100 GPUs with APM (Private Preview) が利用できます。
 
 <br/>
 
