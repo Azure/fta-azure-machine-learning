@@ -85,7 +85,7 @@ jobs:
     - name: Login to Azure CLI
       uses: azure/login@v1
       with:
-        azure_credentials: ${{ secrets.ServicePrincipalCredentials }}
+        creds: ${{ secrets.ServicePrincipalCredentials }}
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
