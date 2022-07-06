@@ -83,7 +83,7 @@ jobs:
       run: |
         echo '{"subscription_id":"${{ secrets.AzureSubscriptionId }}","resource_group":"${{ secrets.FUNDAMENTALS_RESOURCEGROUPNAME }}","workspace_name":"${{ needs.deploy-azure-resources.outputs.azureMLWorkspace }}"}' > config.json
     - name: Login to Azure CLI
-      uses: Azure/aml-workspace@v1
+      uses: azure/login@v1
       with:
         azure_credentials: ${{ secrets.ServicePrincipalCredentials }}
     - name: Set up Python
