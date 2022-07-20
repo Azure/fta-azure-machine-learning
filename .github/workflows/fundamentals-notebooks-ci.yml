@@ -83,16 +83,16 @@ jobs:
       run: |
         echo '{"subscription_id":"${{ secrets.AzureSubscriptionId }}","resource_group":"${{ secrets.FUNDAMENTALS_RESOURCEGROUPNAME }}","workspace_name":"${{ needs.deploy-azure-resources.outputs.azureMLWorkspace }}"}' > config.json
     - name: Login to Azure CLI
-      uses: Azure/aml-workspace@v1
+      uses: azure/login@v1
       with:
-        azure_credentials: ${{ secrets.ServicePrincipalCredentials }}
+        creds: ${{ secrets.ServicePrincipalCredentials }}
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
         python-version: "${{ env.pyVer }}"
     - name: Install dependencies
       run: |
-        pip install azureml-sdk pandas sklearn azureml-mlflow mlflow pytest ipykernel nbmake
+        pip install azureml-sdk pandas sklearn azureml-mlflow mlflow pytest ipykernel nbmake azure-ai-ml==0.1.0b4
         python -m ipykernel install --user --name python3-azureml
     - name: Test notebooks
       run: |
