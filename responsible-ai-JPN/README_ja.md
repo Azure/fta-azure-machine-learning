@@ -8,9 +8,11 @@ AI のテクノロジーが大きな注目を浴びています。画期的で�
 
 ## アジェンダ
 1. [責任のある AI 概要](#1-責任のある-ai-概要)
-2. [機械学習モデルを理解する](#2-機械学習モデルを理解する)
-3. [機械学習モデルとデータを保護する](#3-機械学習モデルとデータを保護する)
-4. [参考情報](#4-参考資料)
+2. [責任のある AI の技術](#2-責任のあるAIの技術)
+- [2.1. 機械学習モデルのデバッグ](#21-機械学習モデルのデバッグ)
+- [2.2. 機械学習モデルを活用した意思決定](#22-機械学習モデルを活用した意思決定)
+- [2.3. セキュリティ & プライバシー](#23-セキュリティとプライバシー)
+3. [参考情報](#3-参考資料)
 
 <br/>
 
@@ -38,9 +40,12 @@ Microsoft 自身も責任のある AI に取り組んでいます。
 - 2016年 : Microsoft CEO Satya Nadella が [The Partnership of the Future](https://slate.com/technology/2016/06/microsoft-ceo-satya-nadella-humans-and-a-i-can-work-together-to-solve-societys-challenges.html) という論説を投稿しました。AI システムの透明性、効率性、プライバシーの尊重、バイアスからの保護などに言及しています。
 - 2017年 : Aether (AI, Ethics, and Effects in Engineering and Research) を設立しました。この団体は Microsoft 社内の責任のある AI に関する最高機関になっており、様々な責任のある AI の課題、テクノロジー、プロセス、ベストプラクティスに関する提言を行なっています。
 - 2018年 : [The Future Computed](https://news.microsoft.com/ja-jp/2018/01/24/180117-future-computed-artificial-intelligence-role-society/) という書籍を公表しました。AI が社会にもたらす課題、AI をどうすれば責任がある形で開発され、運用されるのか、どのようにガバナンスを制定すればいいのかについて Microsoft の見解を述べているものです。後に説明する 6 つの基本原則についても言及しています。また、顔認証技術の透明や独立した第三者機関によるテストの法規制の必要性を訴えています。
-- 2019年 : Office of Responsible AI を設立しました。ポリシーやガバナンスのプロセスを策定しています。また、Responsible AI Standard (v1) を発行しました。
+- 2019年 : Office of Responsible AI を設立しました。ポリシーやガバナンスのプロセスを策定しています。また、Responsible AI Standard (v1) を社内用に発行しました。
 - 2020年 : RAISE (Responsible AI Strategy in Engineering) はエンジニアリンググループ全体で責任のある AI のルールとプロセスの実装を促進するために設立されました。
-- 2021年 : Responsible AI Standard (v2) を発行しました。また最近では Microsoft のこれまでの培ってきた知見を社会・お客様に伝えていくべく、[AI Business School](https://www.microsoft.com/ja-JP/ai/ai-business-school) という責任のある AI などについて学べるビジネス向け学習コンテンツ、ガイドライン、オープンソースのツールを公開しています。
+- 2021年 : Responsible AI Standard (v2) を社内用に発行しました。
+- 2021年 : Responsible AI Standard (v2) を社外に一般公開しました。
+- 
+また最近では Microsoft のこれまでの培ってきた知見を社会・お客様に伝えていくべく、[AI Business School](https://www.microsoft.com/ja-JP/ai/ai-business-school) という責任のある AI などについて学べるビジネス向け学習コンテンツ、ガイドライン、オープンソースのツールを公開しています。
 
 <br/>
 
@@ -136,7 +141,7 @@ Microsoft は Hub and Spokes モデルでガバナンスの体制を構築して
 <br/>
 
 
-### Responsible AI Lifecycle (RAIL)
+<!-- ### Responsible AI Lifecycle (RAIL)
 
 Microsoft は Responsible AI Lifecycle (aka RAIL) を開発しました。これは Responsible AI Standard に沿った形で責任のある AI をシステムに構築・デプロイするためのフレームワークです。詳細は公開されていませんが、下記が概略です。
 
@@ -145,17 +150,44 @@ Microsoft は Responsible AI Lifecycle (aka RAIL) を開発しました。これ
 - AI システムの設計・構築とドキュメンテーション
     - モデルや関連するシステムの設計・構築を行い、AI システムについて文章を作成する。
 - AI システムの検証とサポート
-    - テスト手順を選択し、製品が意図した通りに動作するか確認する。
+    - テスト手順を選択し、製品が意図した通りに動作するか確認する。 -->
+
+### Responsible AI Standard
+2022年 Microsoft は [Responsible AI Standard v2](https://blogs.microsoft.com/wp-content/uploads/prod/sites/5/2022/06/Microsoft-Responsible-AI-Standard-v2-General-Requirements-3.pdf) を社外に公開しました。元々は Microsoft 社内で活用されていたものです。これは責任のある形で AI システムの開発運用の基準となるフレームワークです。
+
+<br>
+
+**ドキュメントの構成**
+- Principles
+    - 責任のある AI を実現するための原則
+- Goals
+    - 各原則で実行されるべき成果
+- Requirements
+    - ゴールを達成するために必要なステップ
+- Tools and Practices
+    - 各ステップを実行するのをサポートするツールやプラクティス
 
 
+※ 参考情報 
+- [責任ある AI システム構築のためのマイクロソフトのフレームワーク (抄訳)](https://news.microsoft.com/ja-jp/2022/07/04/220704-microsofts-framework-for-building-ai-systems-responsibly/)
+- [顔認識に関する責任あるAIポリシーの変更とガイダンスについて (抄訳)](https://www.microsoft.com/ja-jp/events/azurebase/blog/responsible-ai-investments-and-safeguards-for-facial-recognition/)
 
 <br/>
 
 --- 
 
-## 2. 機械学習モデルを理解する
+## 2. 責任のある AI の技術
 
-本モジュールでは、モデルを理解するための様々な技術を紹介します。Responsible AI Lifecycle の中でも 「 AI システムの設計・構築とドキュメンテーション」のフェーズで利用する技術です。主にモデルの透明性と公平性に言及していきます。
+責任のある AI は非常に範囲が広い概念です。本記事では以下の 3 つの分野について説明していきます。
+
+- [2.1. 機械学習モデルのデバッグ](#21-機械学習モデルのデバッグ)
+- [2.2. 機械学習モデルを活用した意思決定](#22-機械学習モデルを活用した意思決定)
+- [2.3. セキュリティ & プライバシー](#23-セキュリティとプライバシー)
+
+
+### 2.1. 機械学習モデルのデバッグ
+
+本モジュールでは、モデルをデバッグするための様々な技術を紹介します。例えば、ブラックボックスなモデルは透明性主にモデルの透明性と公平性に言及していきます。
 
 - モデルの透明性
     - 機械学習アルゴリズムの説明性・解釈可能性の技術より、大域的・局所的なトレンドを理解します。これは AI システムを実装する際に Data Scientist が経営者やステークホルダーにモデルを説明する際に役立ちます。また運用中モデルの挙動について説明が求められるようなシーンでも有効ですし、Data Scientist 自身が開発中の機械学習モデルをデバッグする際にも有効です。
@@ -172,12 +204,12 @@ Microsoft は Responsible AI Lifecycle (aka RAIL) を開発しました。これ
 
 ここで登場する主な技術を紹介します。
 
-### Fairlearn
+#### Fairlearn
 <img src='./docs/images/fairlearn.png' width=500 /><br/>
 
 機械学習モデルの公平性の評価と不公平性の緩和を行うライブラリです。
 
-モデルの不公平性は大きく 2 つに分類されます。
+Fairlearn 対象にしている害 (Harm) は下記の 2 つです。
 
 - 割り当ての害
     - AI システムによって、特定のグループの機会、リソース、または情報が増減されます。 たとえば、雇用、入学許可、融資などで、モデルにより、特定のグループの人が、他のグループより、適切な候補をうまく選択される場合があります。
@@ -189,7 +221,7 @@ Fairlearn はこういった不公平性の危害を評価し、必要に応じ�
 
 <br/>
 
-### Error Analysis
+#### Error Analysis
 
 <img src='https://techcommunity.microsoft.com/t5/image/serverpage/image-id/255440i28671D47179C4A7D/image-size/large?v=v2&px=999' width=500 /><br/>
 
@@ -202,24 +234,44 @@ Error Analysis はモデルの誤差を深堀り分析するツールです。�
 
 <br/>
 
-### InterpretML
+#### InterpretML
 <img src='./docs/images/interpretml.png' width=500 /><br/>
 
 [InterpretML](https://interpret.ml/) は、主要な「解釈可能性が高い Glass-box なモデル」 と 「任意の学習済みモデル (Black-box) に対する説明性付与手法」が実装されているライブラリ群です。それぞれに共通してモデル全体の傾向を見る大域的な説明とテストデータ個々の予測値に対する局所的な説明があります。
 
 
-#### Global Surrogate
+##### Global Surrogate
 
 グローバルなモデル解釈方法。学習済みモデルへの入力データとその予測値を再度線形回帰などの解釈可能なモデルで学習し直して、モデル解釈をするアプローチ方法。InterpretML では LightGBM や線形回帰のモデルが利用できます。
 
 
-#### SHAP
+##### SHAP
 
 [SHAP (SHapley Additive exPlanations)](https://github.com/slundberg/shap) はゲーム理論のシャープレイ値の枠組みを利用して、モデルの種類に関わらず、ここのデータの特徴量ごとの貢献度をみることができます。SHAP 単体でもライブラリが公開されています。
 
-<br/>
+<br>
 
-### Responsible AI Toolbox
+
+#### Explainable Boosting Machines (EBM)
+
+Explainable Boosting Machines (EBM) は、一般化加法モデル (GAM) に交互作用項を組み込んだモデル (GA2M) を高速に推定するアルゴリズムです。
+
+$$
+y =  f(x_1) + f(x_2) + f(x_3) + ... + \Sigma_{ij} f_{ij}(x_i, x_j)
+$$ 
+
+<!-- it uses [Math >> Image](https://marketplace.visualstudio.com/items?itemName=MeowTeam.vscode-math-to-image) to render math in github markdown. -->
+
+<!-- <div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=y%20%3D%20%20f(x_1)%20%2B%20f(x_2)%20%2B%20f(x_3)%20%2B%20...%20%2B%20%5CSigma_%7Bij%7D%20f_%7Bij%7D(x_i%2C%20x_j)"></div> -->
+
+
+それぞれの特徴量 $x_i$ は関数 $f(x_i)$ で表現されています。線形回帰などの線形モデルとは違い目的変数 $y$ との関係性は線形性は前提としていません。この関数を推定する方法はいくつかありますが、EBM ではこの関数をブースティングで推定します。また交互作用項を推定するアルゴリズム (FAST) も実装されており精度向上に寄与しています。
+
+
+<br>
+
+
+#### Responsible AI Toolbox
 
 <img src='./docs/images/raitoolbox.png' width=500 /><br/>
 
@@ -231,63 +283,25 @@ Error Analysis はモデルの誤差を深堀り分析するツールです。�
 
 
 
-<br/>
-
-### Explainable Boosting Machines (EBM)
-
-Explainable Boosting Machines (EBM) は、一般化加法モデル (GAM) に交互作用項を組み込んだモデル (GA2M) を高速に推定するアルゴリズムです。
-
-<!-- $$
-y =  f(x_1) + f(x_2) + f(x_3) + ... + \Sigma_{ij} f_{ij}(x_i, x_j)
-$$ --> 
-
-<!-- it uses [Math >> Image](https://marketplace.visualstudio.com/items?itemName=MeowTeam.vscode-math-to-image) to render math in github markdown. -->
-
-<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=y%20%3D%20%20f(x_1)%20%2B%20f(x_2)%20%2B%20f(x_3)%20%2B%20...%20%2B%20%5CSigma_%7Bij%7D%20f_%7Bij%7D(x_i%2C%20x_j)"></div>
+<br>
 
 
-それぞれの特徴量 <!-- $x_i$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=x_i"> は関数 <!-- $f(x_i)$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=f(x_i)"> で表現されています。線形回帰などの線形モデルとは違い目的変数 <!-- $y$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=y"> との関係性は線形性は前提としていません。この関数を推定する方法はいくつかありますが、EBM ではこの関数をブースティングで推定します。また交互作用項を推定するアルゴリズム (FAST) も実装されており精度向上に寄与しています。
-
-<br/>
-
-
-
-
-
-
-<br/>
-
-### デモンストレーションのシナリオ
+#### デモンストレーション
 ローンの履行・不履行を予測するモデルを作成するシナリオで責任のある AI を考慮した AI システムを構築していきます。[UCI Adault Dataset](https://archive.ics.uci.edu/ml/datasets/adult) を用いた擬似データを利用します。
 
 
-### Phase1 : AI システムの評価と準備
+#### Phase1 : アセスメント
 
-このフェーズでは、AI システムの要件を整理し、責任のある形でシステムが構築可能かどうかの検証を行い、潜在的なリスクを洗い出し、必要に応じてリスクを緩和する方法を考えます。下記の質問に回答してみます。
+(お客様によってカスタマイズされた) Microsoft Responsible AI Standard v2 に従って、責任のある形で AI システムを構築・運用するための評価を行い、実装方法を検討します。
 
-> AI/ML の技術が本当に必要か？
-> 潜在的なリスクがあるか？それはどのようなものか？
-> AI システムが誤った挙動や動作停止することがあるか？
+ローンの審査モデルにおいては公平性が社会問題になることがあります。Responsible AI Standard v2 の Fairness - F2 : Allocation of resources and opportunities を考慮する必要があります。F2.1 ~ F2.9 にデータやモデルの評価、ドキュメンテーション、顧客への情報公開などの必要性が記載されています。
 
-以上の情報をベースに AI システムが抱えるリスクと利益 (ステークホルダーの誰が得をして、誰が損害を被る可能性があるか etc)、リスクに対する軽減策と残存するリスク、公平性、セキュリティ、プライバシーの影響などに関して、必要に応じてテストを行い、ドキュメントを作成します。
-
-例えば、今回のシナリオで AI システムはローンの審査で利用され、適切なモデルであればローン申込者や銀行へ利益をもたらしますが、仮に AI システムが誤った or 想定とは異なる挙動を起こしてしまい、返済不可能な債務を抱える人・企業が増えてしまえば、社会的影響は大きくなる可能性があります。
-
-
-Microsoft は [Harms Modeling (損害のモデル化)](https://docs.microsoft.com/en-us/azure/architecture/guide/responsible-innovation/harms-modeling/) に関するドキュメントを公開しています。信頼される AI システムの構築にはあらゆるステークホルダーの価値観や利益の観点での評価が必要であり、下記のようなプロセスを提示しています。
-
-<img src='https://docs.microsoft.com/en-us/azure/architecture/guide/responsible-innovation/images/stakeholder-process-table.png' width=500 />
-
-
-このような損害 (Harms) はさまざまな種類があります。次のフェーズに入る前に AI システムがそれぞれの損害の種類に該当するのかどうか、該当する場合の損害の大きさを評価します。
-
-<img src='https://docs.microsoft.com/en-us/azure/architecture/guide/responsible-innovation/images/harms-model-example.png' width=500 />
 
 <br/>
 
-### Phase2 : AI システムの設計・構築と文章化
+#### Phase2 : 開発 (Development)
 
-#### データ準備
+##### データ準備
 データの品質が AI システムに大きな影響を与えるため、データの詳細な情報をドキュメントに残しておくことが重要です。[Datasheets for Datasets](https://www.microsoft.com/en-us/research/project/datasheets-for-datasets/) ([Template](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4t8QB)) を利用することで、データの透明性と信頼性を高め、ステークホルダー間のコミュニケーションを促進します。
 
 #### モデル構築
@@ -333,7 +347,7 @@ ebm_predictor.fit(X_train, Y_train)
 
 <img src='./docs/images/ebm_global_interaction.png' width=500 />
 
-<br/>
+<br>
 
 
 次に CatBoost のモデルに説明性を付与します。
@@ -388,7 +402,7 @@ ResponsibleAIDashboard(rai_insights, locale="ja")
 <img src='./docs/images/raitoolbox_dashboard.gif' width=500 />
 
 
-<br/>
+<br>
 次に公平性の評価と不公平性を軽減していきます。まずは最初に CatBoost モデルを性別の観点で公平性を確認します。
 
 ```python
@@ -446,11 +460,11 @@ FairnessDashboard(
 <img src='./docs/images/fairlearn_mitigate_dpratio.png' width=500 />
 
 
-<br/>
+<br>
 
-### Phase3 : AI システムの検証とサポート
+#### Phase3 : デプロイメント (Deployment)
 
-Phase2 で精度と責任ある AI の原則とのトレードオフを考慮したモデルが選択されました。Phase3 では本番環境にモデルをデプロイしていきます。主に機械学習エンジニア、DevOps エンジニアが作業を進めますが、Data Scientist とシームレスに連携する必要があったり、短いサイクルでモデルのリリースや再学習を行う必要性があるため、MLOps を導入します。
+Phase2 で精度と責任ある AI の原則とのトレードオフを考慮したモデルが選択されました。Phase3 では本番環境にこのモデルをデプロイしていきます。主に機械学習エンジニア、DevOps エンジニアが作業を進めますが、Data Scientist とシームレスに連携する必要があったり、短いサイクルでモデルのリリースや再学習を行う必要性があるため、MLOps を導入します。
 
 今回利用している Azure Machine Learning では GitHub (GitHub Actions) and/or Azure DevOps (Azure Pipelines) 用います。一般的には下記の MLOps のプラクティスを実装します。
 
@@ -470,9 +484,17 @@ Phase2 で精度と責任ある AI の原則とのトレードオフを考慮し
 
 ---
 
+### 2.2. 機械学習モデルを活用した意思決定
 
+機械学習モデルを意思決定に利用することがあります。機械学習モデルは入力と出力 (=学習データと正解ラベル) の相関関係を捉えることが出来ますが、必ずしもこれが因果関係と同一であるとは限りません (むしろ異なるものと思った方が良いかも知れません)。
 
-## 3. 機械学習モデルとデータを保護する
+※ 編集中
+
+<br>
+
+--- 
+
+### 2.3. セキュリティとプライバシー
 
 本モジュールでは、機械学習モデルを敵対的攻撃や潜在的な誤用などから保護するための技術を紹介します。
 
@@ -483,19 +505,24 @@ Phase2 で精度と責任ある AI の原則とのトレードオフを考慮し
 
 想定される具体的な障害の種類は [Machine Learning の エラー モード](https://docs.microsoft.com/ja-JP/security/engineering/failure-modes-in-machine-learning) を参照ください。
 
-### SmartNoise
+#### SmartNoise
 
 [SmartNoise](https://smartnoise.org/) は差分プライバシーを利用した AI システムを構築するためのオープンソースのライブラリです。。差分プライバシーはデータにノイズや乱数を追加することで、Data Scientist や外部の攻撃者が個々のデータポイントを識別できないようにします。
 
-### Confidential Computing
+#### Confidential Computing
 
 [Azure Confidential Computing](https://azure.microsoft.com/ja-jp/solutions/confidential-compute/) を利用して Azure 上で機密データの処理を安全に行うことができます。Azure 内部ではデフォルトで Microsoft がデータを暗号化していますが、Microsoft がそのデータにアクセスしないことを確認するのは難しいことです。また機密データに対する攻撃者の手法も多様化しています。Azure Confidential Computing は使用中のデータ (Data In Use) を TEE (Trusted Execution Environments) を利用して保護します。現在は Intel SGX、AMD SEV-SNP、また Nvidia A100 GPUs with APM (Private Preview) が利用できます。
 
-<br/>
+
+#### システムとしてのセキュリティ
+当然ながら上記以外にも、学習・推論を行うシステムとしてのセキュリティ (認証認可、暗号化、ネットワーク etc) を考える必要がありますが、ここでは割愛します。
+
+
+<br>
 
 ---
 
-## 4. 参考資料
+## 3. 参考資料
 
 
 |Topics          |Links                                               |Notes    |
