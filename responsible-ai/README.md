@@ -30,7 +30,7 @@ In this section, we provide an overview of Responsible AI, describing Microsoft 
 
 As AI technology evolves rapidly, the need for transparency across AI systems is growing due to the way that AI systems can operate - exhibiting human-like characterstics - and their potential for large-scale social impact. AI systems without transparency reduce stakeholder trust and is one of the major contributors to the lack of adoption.  However, Responsible AI is not yet widely understood or adopted by many of the companies that are developing and using AI systems.  There may be no guidance or rules around who is responsibie for the challenges of AI systems, such as privacy concerns, malfunctions, and possible side effects. The purpose of this section is to explain Responsible AI concepts and technologies, and help you build, operate, and manage  human-centric, trusted, and transparent AI systems.
 
-"“The more powerful the tool, the greater the benefit or damage it can cause…Technology innovation is not going to slow down.  The work to manage it needs to speed up.”
+"The more powerful the tool, the greater the benefit or damage it can cause…Technology innovation is not going to slow down.  The work to manage it needs to speed up."
 Brad Smith, President and Chief Legal Officer, Microsoft
 
 <br/>
@@ -60,16 +60,24 @@ Microsoft believes that the development and deployment of AI must be guided by t
 - Fairness
     - AI systems should treat everyone fairly and avoid affecting similarly situated groups of people in different ways. For example, when AI systems provide guidance on medical treatment, loan applications, or employment, they should make the same recommendations to everyone with similar symptoms, financial circumstances, or professional qualifications. 
     - Examples:
+        - [Racial Bias in Healthcare Algorithm](https://www.nature.com/articles/d41586-019-03228-6)
+        - [Gender Bias in roles](https://www.bing.com/images/search?q=ceo&form=HDRSC3&first=1&tsc=ImageHoverTitle)
 - Reliability & Safety
     - To build trust, it’s also important that AI systems operate reliably, safely, and consistently under normal circumstances and in unexpected conditions. How they behave and the variety of conditions they can handle reliably and safely largely reflects the range of situations and circumstances that developers anticipate during design and testing.
+    - Examples:
+        - [Driving to Safety](https://www.rand.org/pubs/research_reports/RR1478.html)
 - Privacy & Security
     - It’s also crucial to develop AI systems that can protect private information and resist attacks. As AI becomes more prevalent, protecting privacy and securing important personal and business information is becoming more critical and complex. Privacy and data security issues require especially close attention for AI because access to data is essential for AI systems to make accurate and informed predictions and decisions about people. 
+    - Examples:
+        - [How Target Figured Out A Teen Girl Was Pregnant Before Her Father Did](https://www.forbes.com/sites/kashmirhill/2012/02/16/how-target-figured-out-a-teen-girl-was-pregnant-before-her-father-did/?sh=1826a54c6668)
 - Inclusiveness
     - AI can improve access to education, government services, employment, information, and a wide range of other opportunities. Inclusive design practices can help system developers understand and address potential barriers in a product environment that could unintentionally exclude people. By addressing these barriers, we create opportunities to innovate and design better experiences that benefit everyone.
 - Transparency
     - When AI systems are used to help inform decisions that have tremendous impacts on people’s lives, it’s critical that people understand how those decisions were made. A crucial part of transparency is what we refer to as intelligibility or the useful explanation of the behavior of AI systems and their components. 
 - Accountability
-    - The people who design and deploy AI systems must be accountable for how their systems operate. The need for accountability is particularly crucial with sensitive use technologies like facial recognition. 
+    - The people who design and deploy AI systems must be accountable for how their systems operate. The need for accountability is particularly crucial with sensitive use technologies like facial recognition.
+    - Examples:
+        - [UK Official Says It's Too Expensive to Delete All the Mugshots of Innocent People in Police Databases](https://gizmodo.com/uk-official-says-its-too-expensive-to-delete-all-the-mu-1825388626)
 
 
 ### Putting Responsible AI into Practice
@@ -170,7 +178,7 @@ Microsoft has developed the Responsible AI Lifecycle (aka RAIL). It is a framewo
 
 --- 
 
-## <a name=2-understand-ml"></a>2. Understand machine learning models
+## <a name="2-understand-ml"></a>2. Understand machine learning models
 
 In this section, we will introduce various techniquess for understanding models. These are used in the "Design, construction and documentation of AI Systems" phase of the Responsible AI Lifecycle. We will mainly focus on the transparency, reliability and safety, and fairness aspects of the model.
 
@@ -227,10 +235,6 @@ Therefore, by digging deeper into the error and identifying cohorts with large o
 <img src='./docs/images/interpretml.png' width=500 /><br/>
 
 [InterpretML](https://interpret.ml/) is a set of libraries that you to train interpretable glassbox models and explain blackbox systems. InterpretML helps you understand your model's global behavior, or understand the reasons behind individual predictions.  InterpretML also includes the first implementation of the Explainable Boosting Machine, a powerful, interpretable, glassbox model that can be as accurate as many blackbox models.
-
-#### Global Surrogate
-
-グローバルなモデル解釈方法。学習済みモデルへの入力データとその予測値を再度線形回帰などの解釈可能なモデルで学習し直して、モデル解釈をするアプローチ方法。InterpretML では LightGBM や線形回帰のモデルが利用できます。
 
 #### LIME 
 Local interpretable model-agnostic explanations [LIME](https://arxiv.org/pdf/1602.04938.pdf) is a method that fits a surrogate glassbox model around the decision space of any blackbox model’s prediction.
@@ -515,7 +519,7 @@ For specific types of possible failures, see [Failure Modes in Machine Learning]
 
 |Topics          |Links                                               |Notes    |
 |----------------|----------------------------------------------------|---------|
-|Microsoft RAI   |[Microsoft の責任のある AI の原則](https://www.microsoft.com/ai/responsible-ai)||
+|Microsoft RAI   |[Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai)||
 |Microsoft RAI   |[Responsible AI resources](https://www.microsoft.com/en-us/ai/responsible-ai-resources)||
 |Error Analysis  |[Error Analysis Web page](https://erroranalysis.ai/)|         |
 |Fairlearn       |[Fairlearn Web page](https://fairlearn.org/)        |         |
@@ -524,4 +528,4 @@ For specific types of possible failures, see [Failure Modes in Machine Learning]
 |Microsoft Learn |[Discover ways to foster an AI-ready culture in your business](https://docs.microsoft.com/en-us/learn/paths/foster-ai-ready-culture/)||
 |Microsoft Learn |[Identify principles and practices for responsible AI](https://docs.microsoft.com/en-us/learn/paths/responsible-ai-business-principles/)||
 |Microsoft Learn |[Identify guiding principles for responsible AI in government](https://docs.microsoft.com/en-us/learn/paths/responsible-ai-government-principles/)||
-|AI Business School |[AI Business School の人工知能コース](https://www.microsoft.com/ai/ai-business-school?rtc=1)||
+|AI Business School |[AI Business School](https://www.microsoft.com/ai/ai-business-school?rtc=1)||
