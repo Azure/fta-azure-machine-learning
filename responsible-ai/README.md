@@ -22,7 +22,7 @@ This live session will introduce concepts such as Microsoft's Responsible AI Pri
 ---
 
  ## <a name="1-rai-overview"></a>1. Responsible AI Overview
-In this section, we provide an overview of Responsible AI, describing Microsoft journey from thought to processes, frameworks, and tools, including the steps we're taking to ensure that AI is developed and used responsibly.
+In this section, we provide an overview of Responsible AI, describing Microsoft's journey from thought to processes, frameworks, and tools, including the steps we're taking to ensure that AI is developed and used responsibly.
 
 <br/>
 
@@ -42,11 +42,11 @@ Microsoft has been on the Responsible AI journey since 2016.
 <img src='./docs/images/microsoft_rai_journey.png' width=500 />
 
 - 2016 : Microsoft CEO Satya Nadella posts an op-ed titled [The Partnership of the Future](https://slate.com/technology/2016/06/microsoft-ceo-satya-nadella-humans-and-a-i-can-work-together-to-solve-societys-challenges.html). It mentions the transparency, efficiency, respect for privacy, and protection from bias in AI systems.
-- 2017 : Founded AETHER (AI, Ethics, and Effects in Engineering and Research). This organization is Microsoft's strategic Responsible AI organisation and makes recommendations on a variety of Responsible AI challenges, technologies, processes, and best practices.
-- 2018 : Published a book called [The Future Computed](https://news.microsoft.com/ja-jp/2018/01/24/180117-future-computed-artificial-intelligence-role-society/). It outlines Microsoft's views on the challenges AI poses to society, how AI can be developed and operated responsibly, and how governance should be established. It also mentions six basic principles that we'll discuss later. It also calls for the need for transparency in facial recognition technology and the legal-regulation of testing by independent third-party organizations.
+- 2017 : Founded AETHER (AI, Ethics, and Effects in Engineering and Research). This organisation is Microsoft's strategic Responsible AI organisation and makes recommendations on a variety of Responsible AI challenges, technologies, processes, and best practices.
+- 2018 : Published a book called [The Future Computed](https://blogs.microsoft.com/blog/2018/01/17/future-computed-artificial-intelligence-role-society/). It outlines Microsoft's views on the challenges AI poses to society, how AI can be developed and operated responsibly, and how governance should be established. It also mentions six basic principles that we'll discuss later. It also calls for the need for transparency in facial recognition technology and the legal-regulation of testing by independent third-party organisations.
 - 2019 : Established Office of Responsible AI to develop policies and governance processes.
 - 2020 : RAISE (Responsible AI Strategy in Engineering) was established to facilitate the implementation of Responsible AI rules and processes across engineering groups.
-- 2021 : Responsible AI Standard (v2) published. Recently, in order to convey the knowledge that Microsoft has cultivated to society and customers, we have released [AI Business School](https://www.microsoft.com/ja-JP/ai/ai-business-school), which is contains learning material, guidelines, targetted at business decision makers to help learn about Responsible AI.
+- 2021 : Responsible AI Standard (v2) published. Recently, in order to convey the knowledge that Microsoft has cultivated to society and customers, we have released [AI Business School](https://www.microsoft.com/ai/ai-business-school), which is contains learning material, guidelines, targetted at business decision makers to help learn about Responsible AI.
 
 <br/>
 
@@ -155,7 +155,7 @@ Microsoft using a Hub and Spoke model for it's Responsible AI governance structu
 - RAISE (Responsible AI Strategy in Engineering)
     - The engineering group is responsible for developing AI rules, implementing system strategy, and processes.
 - Responsible AI Champs
-    - Responsible AI Champs acts as a spoke, helping to implement rules and increase awareness across the organization. We provide advisory services to customers and internal sensitive use cases.
+    - Responsible AI Champs acts as a spoke, helping to implement rules and increase awareness across the organisation. We provide advisory services to customers and internal sensitive use cases.
 
 
 <br/>
@@ -192,7 +192,7 @@ In this section, we will introduce various techniquess for understanding models.
 
 Assessing and debugging machine learning models is critical for model reliability, interpretability, fairness, and compliance. It helps determine how and why AI systems behave the way they do. You can then use this knowledge to improve model performance. Conceptually, model debugging consists of three stages:
 
-1. **Identify**, to understand and recognize model errors and/or fairness issues by addressing the following questions: "What kinds of errors does my model have?" and "In what areas are errors most prevalent?"
+1. **Identify**, to understand and recognise model errors and/or fairness issues by addressing the following questions: "What kinds of errors does my model have?" and "In what areas are errors most prevalent?"
 2. **Diagnose**, to explore the reasons behind the identified errors by addressing: "What are the causes of these errors?", and "Where should I focus my resources to improve my model?"
 3. **Mitigation**, to use the identification and diagnosis insights from previous stages to take targeted mitigation steps and address questions such as: "How can I improve my model?" and "What social or technical solutions exist for these issues?"
 
@@ -245,7 +245,7 @@ Local interpretable model-agnostic explanations [LIME](https://arxiv.org/pdf/160
 
 ### Explainable Boosting Machines (EBM)
 
-EBM is an interpretable model developed at Microsoft Research. It uses modern machine learning techniques like bagging, gradient boosting, and automatic interaction detection to breathe new life into traditional GAMs (Generalized Additive Models). This makes EBMs as accurate as state-of-the-art techniques like random forests and gradient boosted trees. However, unlike these blackbox models, EBMs produce exact explanations and are editable by domain experts.
+EBM is an interpretable model developed at Microsoft Research. It uses modern machine learning techniques like bagging, gradient boosting, and automatic interaction detection to breathe new life into traditional GAMs (Generalised Additive Models). This makes EBMs as accurate as state-of-the-art techniques like random forests and gradient boosted trees. However, unlike these blackbox models, EBMs produce exact explanations and are editable by domain experts.
 
 <!-- $$
 y =  f(x_1) + f(x_2) + f(x_3) + ... + \Sigma_{ij} f_{ij}(x_i, x_j)
@@ -276,14 +276,15 @@ The Responsible AI Toolbox is a collection of some of the tools previously descr
 
 <br/>
 <br/>
-### Demo
+
+## Demo
 
 We will build an AI system that considers responsible AI for a scenario in which we create a model that predict loan fulfillment and loan default, using [UCI Adult Dataset](https://archive.ics.uci.edu/ml/datasets/adult).
 
 
 ### Phase 1 : Evaluation and Preparation of AI Systems
 
-In this phase, you'll organize the requirements for the AI system, validate whether the system can be built responsibly, identify potential risks, and think about how to mitigate them if necessary. Try to answer the following questions:
+In this phase, you'll organise the requirements for the AI system, validate whether the system can be built responsibly, identify potential risks, and think about how to mitigate them if necessary. Try to answer the following questions:
 
 > Do you really need AI/ML technology? 
 > Are there any potential risks? What does they look like? 
@@ -311,7 +312,7 @@ Because the quality of data has a significant impact on AI systems, it's importa
 
 #### Model Building
 
-Next, we will proceed with model construction. The first model construction uses the gradient boosting library [CatBoost](https://catboost.ai/). You then construct a highly interpretable model, a generalized additive model, using the Explainable Boosting Machine (aka EBM). It also uses InterpretML to add explanatory value to the pre-built CatBoost model.
+Next, we will proceed with model construction. The first model construction uses the gradient boosting library [CatBoost](https://catboost.ai/). You then construct a highly interpretable model, a generalised additive model, using the Explainable Boosting Machine (aka EBM). It also uses InterpretML to add explanatory value to the pre-built CatBoost model.
 
 Finally, FairLearn is used to assess fairness and mitigate unfairness.
 
