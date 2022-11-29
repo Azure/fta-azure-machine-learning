@@ -8,11 +8,11 @@ command: >-
 inputs:
   training_data: 
     type: uri_folder 
-    path: azureml:diabetes-dev:1
+    path: azureml:diabetes-prod:1
   reg_rate: 0.01
 environment: azureml:AzureML-sklearn-0.24-ubuntu18.04-py37-cpu@latest
 # define compute target
 compute: azureml:cpu-cluster
 # define experiment name
-experiment_name: mlops-maturity-level-2  
+experiment_name: mlops-maturity-level-3
 description: Train a classification model on diabetes data using a registered dataset as input.
