@@ -13,7 +13,7 @@ The content of this session is available in our [github repository](https://aka.
 | 03. |  | Compute | Go through the various workspace compute options
 | 04. |  | Datastores | Explore the [supported data storing engines](https://docs.microsoft.com/azure/machine-learning/how-to-access-data#supported-data-storage-service-types) and why you need to register them
 | 05. |  | Datasets | Register a dataset stored within a datastore and gain insights on the data
-|     | AzureML SDK (v1) | Walkthrough | Azure ML Model Training and Inferencing through AzureMl Python SDK V1 
+|     | AzureML SDK (V2) | Walkthrough | Azure ML Model Training and Inferencing through AzureMl Python SDK V2 and CLI V2
 | 06. |  | Working with resources | Manipulate your AzureML workspace with python code
 | 07. |  | Logging metrics | Explore AzureML SDK and MLflow
 | 08. |  | Submit script | Execute code on a remote cluster
@@ -21,14 +21,6 @@ The content of this session is available in our [github repository](https://aka.
 | 10. |  | Author pipeline | Orchestrate multiple steps in a pipeline
 | 11. |  | Review pipeline endpoints | Explore the published pipeline and how to invoke via REST
 | 12. |  | Parallel batch processing | Batch inference pipelines
-|     | AzureML SDK (V2) | Walkthrough | Azure ML Model Training and Inferencing through AzureMl Python SDK V2 and CLI V2
-| 13. |  | Working with resources | Manipulate your AzureML workspace with python code
-| 14. |  | Logging metrics | Explore AzureML SDK and MLflow
-| 15. |  | Submit script | Execute code on a remote cluster
-| 16. |  | Environments | Add code dependencies in the executing context
-| 17. |  | Author pipeline | Orchestrate multiple steps in a pipeline
-| 18. |  | Review pipeline endpoints | Explore the published pipeline and how to invoke via REST
-| 19. |  | Parallel batch processing | Batch inference pipelines
 
 ## Additional samples
 
