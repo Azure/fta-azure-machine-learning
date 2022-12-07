@@ -6,7 +6,7 @@
 
 ## Before the live event
 
-- Start your compute instance in Azure ML portal, make sure it is ready to work off of the notebooks and samples.
+- Start your compute instance in Azure ML Studio, make sure it is ready to work off of the notebooks and samples.
 
 
 ## During the live event
