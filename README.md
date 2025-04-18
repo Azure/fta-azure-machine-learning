@@ -1,3 +1,7 @@
+# IMPORTANT
+
+Due to the disbandment of the FastTrack for Azure orgnization within Microsoft, this repository is being archived, and will no longer be updated.
+
 # FastTrack for Azure - Azure Machine Learning (AzureML) Live events
 
 This repo contains the material used for the [FTA AzureML Live](https://aka.ms/ftaLive) events.
